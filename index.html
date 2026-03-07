@@ -21,6 +21,8 @@
       <ul class="nav__links">
         <li><a href="#about">About</a></li>
         <li><a href="#stories">Stories</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#stats">Impact</a></li>
         <li><a href="#get-involved">Get Involved</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -33,6 +35,8 @@
     <div class="nav__mobile" id="mobileMenu">
       <a href="#about">About</a>
       <a href="#stories">Stories</a>
+      <a href="#events">Events</a>
+      <a href="#team">Team</a>
       <a href="#stats">Impact</a>
       <a href="#get-involved">Get Involved</a>
       <a href="#contact">Contact</a>
@@ -188,7 +192,7 @@
               than ever. Whether it's a natural disaster or a medical crisis, the right
               training changes everything.
             </p>
-            <a href="#" class="story-card__link">Read Story →</a>
+            <a href="articles/mastering-emergency-responses-training-and-resources.html" class="story-card__link">Read Story →</a>
           </div>
         </article>
 
@@ -208,7 +212,7 @@
               Practical skills and actionable guides that help everyday people feel confident
               when emergencies arise.
             </p>
-            <a href="#" class="story-card__link">Read Story →</a>
+            <a href="articles/just-in-case-enhance-your-emergency-preparedness-skills.html" class="story-card__link">Read Story →</a>
           </div>
         </article>
 
@@ -228,13 +232,36 @@
               In a world that is constantly changing, the importance of emergency education
               cannot be overstated. We're building the next generation of prepared citizens.
             </p>
-            <a href="#" class="story-card__link">Read Story →</a>
+            <a href="articles/essential-emergency-education-for-future-generations.html" class="story-card__link">Read Story →</a>
           </div>
         </article>
 
       </div>
     </div>
   </section>
+
+  <!-- UPCOMING EVENTS -->
+  <section class="events section" id="events">
+    <div class="container">
+      <p class="section__eyebrow">What's Coming Up</p>
+      <h2 class="section__title">Upcoming Events</h2>
+      <p class="events__subtitle">
+        Hands-on training, community fairs, and online workshops — there's something for everyone.
+        Click any event to learn more and register.
+      </p>
+      <div class="events__grid" id="eventsGrid">
+        <!-- Populated by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT REGISTRATION MODAL -->
+  <div class="modal-overlay" id="eventModal" aria-hidden="true" aria-modal="true" role="dialog">
+    <div class="modal" id="modalContainer">
+      <button class="modal__close" id="modalClose" aria-label="Close dialog">✕</button>
+      <div id="modalBody"><!-- Populated by script.js --></div>
+    </div>
+  </div>
 
   <!-- TESTIMONIAL -->
   <section class="testimonial section">
@@ -252,6 +279,118 @@
             <p class="testimonial__role">Community Member</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR TEAM -->
+  <section class="team section" id="team">
+    <div class="container">
+      <p class="section__eyebrow">The People Behind It</p>
+      <h2 class="section__title">Meet our team.</h2>
+      <p class="team__subtitle">
+        A passionate group of young leaders dedicated to making emergency
+        preparedness accessible for every community.
+      </p>
+
+      <div class="team__grid">
+
+        <!-- Director -->
+        <div class="team-card team-card--director">
+          <div class="team-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=80"
+              alt="Serena Tsao"
+              class="team-card__img"
+            />
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn" class="team-card__social-link">in</a>
+            </div>
+          </div>
+          <div class="team-card__body">
+            <span class="team-card__role">Executive Director</span>
+            <h3 class="team-card__name">Serena Tsao</h3>
+            <p class="team-card__bio">
+              Serena founded Just In Case with a simple belief: that knowing
+              what to do in a crisis shouldn't be a privilege. She leads the
+              organization's strategy, partnerships, and programs with a focus
+              on equity-driven emergency education.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-card">
+          <div class="team-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80"
+              alt="Marcus Chen"
+              class="team-card__img"
+            />
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn" class="team-card__social-link">in</a>
+            </div>
+          </div>
+          <div class="team-card__body">
+            <span class="team-card__role">Programs Coordinator</span>
+            <h3 class="team-card__name">Marcus Chen</h3>
+            <p class="team-card__bio">
+              Marcus designs and runs JICE's workshop curriculum, working with
+              certified instructors to deliver first aid and disaster
+              preparedness training that's engaging, practical, and
+              age-appropriate for every audience.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card">
+          <div class="team-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&q=80"
+              alt="Aisha Patel"
+              class="team-card__img"
+            />
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn" class="team-card__social-link">in</a>
+            </div>
+          </div>
+          <div class="team-card__body">
+            <span class="team-card__role">Outreach Director</span>
+            <h3 class="team-card__name">Aisha Patel</h3>
+            <p class="team-card__bio">
+              Aisha builds JICE's community partnerships and spearheads our
+              outreach campaigns. She connects the organization with schools,
+              local governments, and nonprofits to expand the reach of
+              emergency preparedness education.
+            </p>
+          </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-card">
+          <div class="team-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80"
+              alt="Jordan Williams"
+              class="team-card__img"
+            />
+            <div class="team-card__socials">
+              <a href="#" aria-label="LinkedIn" class="team-card__social-link">in</a>
+            </div>
+          </div>
+          <div class="team-card__body">
+            <span class="team-card__role">Volunteer Manager</span>
+            <h3 class="team-card__name">Jordan Williams</h3>
+            <p class="team-card__bio">
+              Jordan recruits, trains, and coordinates JICE's growing volunteer
+              network. Their work ensures every event runs smoothly and that
+              volunteers feel empowered, valued, and equipped to make a real
+              difference.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -341,6 +480,8 @@
         <h4>Navigate</h4>
         <a href="#about">About</a>
         <a href="#stories">Stories</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
         <a href="#stats">Impact</a>
         <a href="#get-involved">Get Involved</a>
         <a href="#contact">Contact</a>
