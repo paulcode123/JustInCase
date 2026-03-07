@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Just In Case | Emergency Readiness for Everyone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">⚡</span>
+        <span class="nav__logo-text">Just In Case</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#stats">Impact</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#donate" class="btn btn--nav">Donate</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#stories">Stories</a>
+      <a href="#stats">Impact</a>
+      <a href="#get-involved">Get Involved</a>
+      <a href="#contact">Contact</a>
+      <a href="#donate" class="btn btn--nav">Donate</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        501(c)(3) Nonprofit Organization
+      </div>
+      <h1 class="hero__headline">
+        Emergency readiness<br />
+        <span class="hero__headline-accent">for everyone.</span>
+      </h1>
+      <p class="hero__sub">
+        We equip communities with the knowledge, tools, and confidence to respond
+        when it matters most — because preparedness saves lives.
+      </p>
+      <div class="hero__ctas">
+        <a href="#about" class="btn btn--primary">Learn More</a>
+        <a href="#donate" class="btn btn--ghost">Donate Today</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- MISSION STRIP -->
+  <section class="mission-strip">
+    <div class="mission-strip__inner">
+      <div class="mission-strip__item">
+        <span class="mission-strip__icon">🏥</span>
+        <span>First Aid Training</span>
+      </div>
+      <div class="mission-strip__divider"></div>
+      <div class="mission-strip__item">
+        <span class="mission-strip__icon">🌪️</span>
+        <span>Disaster Preparedness</span>
+      </div>
+      <div class="mission-strip__divider"></div>
+      <div class="mission-strip__item">
+        <span class="mission-strip__icon">📋</span>
+        <span>Emergency Guides</span>
+      </div>
+      <div class="mission-strip__divider"></div>
+      <div class="mission-strip__item">
+        <span class="mission-strip__icon">🤝</span>
+        <span>Community Workshops</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__visual">
+          <div class="about__card about__card--main">
+            <img
+              src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=600&q=80"
+              alt="Paramedics assisting a patient"
+              class="about__img"
+            />
+            <div class="about__card-overlay">
+              <span>Real training. Real impact.</span>
+            </div>
+          </div>
+          <div class="about__card about__card--accent">
+            <div class="about__stat-bubble">
+              <span class="about__stat-num" data-count="5000">0</span>
+              <span class="about__stat-label">Lives impacted</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__copy">
+          <p class="section__eyebrow">Who We Are</p>
+          <h2 class="section__title">Prepared communities<br />are resilient communities.</h2>
+          <p class="about__body">
+            Just In Case of Emergency is a youth-led nonprofit dedicated to closing the gap in
+            emergency education. From CPR and first aid to natural disaster response, we create
+            accessible, engaging programs so everyone knows what to do when seconds count.
+          </p>
+          <p class="about__body">
+            Our guides are clear, practical, and built for people of all ages — because
+            emergencies don't discriminate, and neither does preparedness.
+          </p>
+          <a href="#get-involved" class="btn btn--primary">Get Involved</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="stats__bg"></div>
+    <div class="container stats__inner">
+      <p class="section__eyebrow section__eyebrow--light">Our Impact</p>
+      <h2 class="section__title section__title--light">Growing every single day.</h2>
+      <div class="stats__grid">
+        <div class="stats__card">
+          <span class="stats__num" data-count="120">0</span>
+          <span class="stats__plus">+</span>
+          <span class="stats__label">Volunteers</span>
+        </div>
+        <div class="stats__card">
+          <span class="stats__num" data-count="3400">0</span>
+          <span class="stats__plus">+</span>
+          <span class="stats__label">Hours Served</span>
+        </div>
+        <div class="stats__card">
+          <span class="stats__num" data-count="85">0</span>
+          <span class="stats__plus">+</span>
+          <span class="stats__label">Workshops Run</span>
+        </div>
+        <div class="stats__card">
+          <span class="stats__num" data-count="42">0</span>
+          <span class="stats__plus">+</span>
+          <span class="stats__label">Communities Reached</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED STORIES -->
+  <section class="stories section" id="stories">
+    <div class="container">
+      <p class="section__eyebrow">Featured Stories</p>
+      <h2 class="section__title">Knowledge that saves lives.</h2>
+      <div class="stories__grid">
+
+        <article class="story-card story-card--featured">
+          <div class="story-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80"
+              alt="Emergency response training"
+              class="story-card__img"
+            />
+            <span class="story-card__tag">Training</span>
+          </div>
+          <div class="story-card__body">
+            <p class="story-card__meta">Lawrence Yan &nbsp;·&nbsp; Aug 20, 2025 &nbsp;·&nbsp; 5 min read</p>
+            <h3 class="story-card__title">Mastering Emergency Responses: Training and Resources</h3>
+            <p class="story-card__excerpt">
+              In today's unpredictable world, being prepared for emergencies is more important
+              than ever. Whether it's a natural disaster or a medical crisis, the right
+              training changes everything.
+            </p>
+            <a href="#" class="story-card__link">Read Story →</a>
+          </div>
+        </article>
+
+        <article class="story-card">
+          <div class="story-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&q=80"
+              alt="Community preparedness workshop"
+              class="story-card__img"
+            />
+            <span class="story-card__tag">Preparedness</span>
+          </div>
+          <div class="story-card__body">
+            <p class="story-card__meta">Lawrence Yan &nbsp;·&nbsp; Aug 20, 2025 &nbsp;·&nbsp; 4 min read</p>
+            <h3 class="story-card__title">Just in Case: Enhance Your Emergency Preparedness Skills</h3>
+            <p class="story-card__excerpt">
+              Practical skills and actionable guides that help everyday people feel confident
+              when emergencies arise.
+            </p>
+            <a href="#" class="story-card__link">Read Story →</a>
+          </div>
+        </article>
+
+        <article class="story-card">
+          <div class="story-card__img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80"
+              alt="Youth emergency education"
+              class="story-card__img"
+            />
+            <span class="story-card__tag">Education</span>
+          </div>
+          <div class="story-card__body">
+            <p class="story-card__meta">Lawrence Yan &nbsp;·&nbsp; Aug 20, 2025 &nbsp;·&nbsp; 4 min read</p>
+            <h3 class="story-card__title">Essential Emergency Education for Future Generations</h3>
+            <p class="story-card__excerpt">
+              In a world that is constantly changing, the importance of emergency education
+              cannot be overstated. We're building the next generation of prepared citizens.
+            </p>
+            <a href="#" class="story-card__link">Read Story →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial section">
+    <div class="container">
+      <div class="testimonial__card">
+        <div class="testimonial__quote-icon">"</div>
+        <blockquote class="testimonial__quote">
+          Before JICE, I never thought about what to do in a real emergency.
+          Their guides are clear, practical, and made for people my age.
+        </blockquote>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">DT</div>
+          <div>
+            <p class="testimonial__name">David Thompson</p>
+            <p class="testimonial__role">Community Member</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section class="involved section" id="get-involved">
+    <div class="container">
+      <p class="section__eyebrow">Take Action</p>
+      <h2 class="section__title">Join the movement.</h2>
+      <div class="involved__grid">
+        <div class="involved__card" data-delay="0">
+          <div class="involved__icon">🙋</div>
+          <h3>Volunteer</h3>
+          <p>Give your time and skills to help communities prepare for the unexpected.</p>
+          <a href="#contact" class="btn btn--outline">Sign Up</a>
+        </div>
+        <div class="involved__card" data-delay="100">
+          <div class="involved__icon">❤️</div>
+          <h3 id="donate">Donate</h3>
+          <p>Your contribution funds workshops, guides, and training for underserved communities.</p>
+          <a href="mailto:justincaseofemergencyedu@gmail.com" class="btn btn--primary">Donate Now</a>
+        </div>
+        <div class="involved__card" data-delay="200">
+          <div class="involved__icon">📢</div>
+          <h3>Spread the Word</h3>
+          <p>Share our mission. Emergency preparedness starts with awareness.</p>
+          <a href="#" class="btn btn--outline">Share</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__copy">
+          <p class="section__eyebrow">Get In Touch</p>
+          <h2 class="section__title">Let's build a more<br />prepared world together.</h2>
+          <p class="contact__body">
+            Have a question, want to partner with us, or ready to get involved?
+            Send us a message and we'll get back to you shortly.
+          </p>
+          <a href="mailto:justincaseofemergencyedu@gmail.com" class="contact__email">
+            <span class="contact__email-icon">✉</span>
+            justincaseofemergencyedu@gmail.com
+          </a>
+        </div>
+        <form class="contact__form" id="contactForm">
+          <div class="form__row">
+            <div class="form__group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+            </div>
+            <div class="form__group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+          <div class="form__group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="How can we help?" />
+          </div>
+          <div class="form__group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          <p class="form__success" id="formSuccess">Thanks! We'll be in touch soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <span class="nav__logo-icon">⚡</span>
+          <span class="nav__logo-text">Just In Case</span>
+        </a>
+        <p class="footer__tagline">Emergency readiness for everyone.</p>
+        <p class="footer__legal">Just In Case of Emergency Inc. is a registered 501(c)(3) nonprofit organization.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Navigate</h4>
+        <a href="#about">About</a>
+        <a href="#stories">Stories</a>
+        <a href="#stats">Impact</a>
+        <a href="#get-involved">Get Involved</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer__links">
+        <h4>Connect</h4>
+        <a href="mailto:justincaseofemergencyedu@gmail.com">Email Us</a>
+        <a href="#get-involved">Volunteer</a>
+        <a href="#donate">Donate</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Just In Case of Emergency Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
