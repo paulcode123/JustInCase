@@ -548,11 +548,13 @@ ul { list-style: none; }
 }
 
 .stats__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 56px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stats__card {
