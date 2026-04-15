@@ -548,8 +548,9 @@ ul { list-style: none; }
 }
 
 .stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   margin-top: 56px;
 }
