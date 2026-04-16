@@ -416,6 +416,21 @@ ul { list-style: none; }
   box-shadow: var(--shadow-lg);
 }
 
+/* Featured Stories Hero - Compact Version */
+.hero--featured {
+  min-height: auto;
+  padding: 80px 0 100px 0;
+}
+
+.hero__headline--small {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.stories--top-margin {
+  margin-top: 60px;
+}
+
 /* ---------- MISSION STRIP ---------- */
 .mission-strip {
   background: var(--off-white);
