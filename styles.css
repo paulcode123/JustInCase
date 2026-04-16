@@ -403,6 +403,19 @@ ul { list-style: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ---------- HERO STORIES GRID ---------- */
+.hero .stories__grid {
+  max-width: 100%;
+}
+
+.hero .story-card {
+  background: rgba(255,255,255,.95);
+}
+
+.hero .story-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
 /* ---------- MISSION STRIP ---------- */
 .mission-strip {
   background: var(--off-white);
