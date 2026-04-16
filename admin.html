@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Just In Case Messages</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .admin-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .messages-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .message-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+    }
+
+    .message-card.unread {
+      border-left: 4px solid #3b82f6;
+    }
+
+    .message-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .message-meta {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .message-name {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .message-email {
+      color: #3b82f6;
+    }
+
+    .message-timestamp {
+      color: #9ca3af;
+    }
+
+    .message-subject {
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.5rem;
+    }
+
+    .message-content {
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #6b7280;
+    }
+
+    .error {
+      text-align: center;
+      padding: 2rem;
+      color: #dc2626;
+      background: #fef2f2;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <a href="/" class="back-link">← Back to Website</a>
+
+    <div class="admin-header">
+      <h1>Message Inbox</h1>
+      <p>View and manage contact form submissions</p>
+    </div>
+
+    <div id="messagesContainer">
+      <div class="loading">Loading messages...</div>
+    </div>
+  </div>
+
+  <script>
+    async function loadMessages() {
+      const container = document.getElementById('messagesContainer');
+
+      try {
+        const response = await fetch('/api/get-messages', {
+          headers: {
+            'Authorization': 'Bearer admin-secret-key'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to load messages');
+        }
+
+        const data = await response.json();
+        const messages = data.submissions || [];
+
+        if (messages.length === 0) {
+          container.innerHTML = '<div class="loading">No messages yet.</div>';
+          return;
+        }
+
+        const messagesHtml = messages
+          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+          .map(message => `
+            <div class="message-card ${!message.read ? 'unread' : ''}">
+              <div class="message-header">
+                <div class="message-meta">
+                  <span class="message-name">${message.firstName}</span>
+                  <span class="message-email">(${message.email})</span>
+                </div>
+                <div class="message-timestamp">
+                  ${new Date(message.timestamp).toLocaleString()}
+                </div>
+              </div>
+              ${message.subject ? `<div class="message-subject">${message.subject}</div>` : ''}
+              <div class="message-content">${message.message.replace(/\n/g, '<br>')}</div>
+            </div>
+          `).join('');
+
+        container.innerHTML = `<div class="messages-grid">${messagesHtml}</div>`;
+
+      } catch (error) {
+        console.error('Error loading messages:', error);
+        container.innerHTML = '<div class="error">Error loading messages. Please try again later.</div>';
+      }
+    }
+
+    // Load messages when page loads
+    loadMessages();
+  </script>
+</body>
+</html>

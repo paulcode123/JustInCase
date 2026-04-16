@@ -206,19 +206,43 @@ document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
 
-if (form && success) form.addEventListener('submit', (e) => {
+if (form && success) form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  setTimeout(() => {
-    success.classList.add('visible');
-    form.reset();
+  try {
+    const formData = new FormData(form);
+    const data = {
+      firstName: formData.get('firstName'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+
+    const response = await fetch('/api/submit-message', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      success.classList.add('visible');
+      form.reset();
+      setTimeout(() => success.classList.remove('visible'), 5000);
+    } else {
+      throw new Error('Failed to send message');
+    }
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    alert('Sorry, there was an error sending your message. Please try again or email us directly.');
+  } finally {
     btn.textContent = 'Send Message';
     btn.disabled = false;
-    setTimeout(() => success.classList.remove('visible'), 5000);
-  }, 1200);
+  }
 });
 
 /* ---------- EVENTS ---------- */

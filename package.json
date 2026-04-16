@@ -1,0 +1,16 @@
+{
+  "name": "just-in-case",
+  "version": "1.0.0",
+  "description": "Just In Case emergency preparedness website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required'",
+    "start": "vercel dev"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": ["emergency", "preparedness", "nonprofit"],
+  "author": "Just In Case of Emergency Inc.",
+  "license": "MIT"
+}
