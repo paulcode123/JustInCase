@@ -577,7 +577,8 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeEventModal();
 });
 
-renderEvents();
+// renderEvents() - Removed: Events section now displays coming soon message
+// renderEvents();
 
 /* ---------- SMOOTH SCROLL FOR NAV LINKS ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
