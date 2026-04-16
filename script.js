@@ -583,10 +583,12 @@ document.addEventListener('keydown', e => {
 /* ---------- SMOOTH SCROLL FOR NAV LINKS ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
-      const offset = 80;
+      // Use different offset for donate section to align with the donate button
+      const offset = href === '#donate' ? 120 : 80;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
