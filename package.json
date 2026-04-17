@@ -8,9 +8,14 @@
     "build": "echo 'No build step required'",
     "start": "vercel dev"
   },
-  "dependencies": {},
-  "devDependencies": {},
-  "keywords": ["emergency", "preparedness", "nonprofit"],
+  "dependencies": {
+    "sharp": "^0.34.5"
+  },
+  "keywords": [
+    "emergency",
+    "preparedness",
+    "nonprofit"
+  ],
   "author": "Just In Case of Emergency Inc.",
   "license": "MIT"
 }
