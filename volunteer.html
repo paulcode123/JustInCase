@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volunteer | Just In Case</title>
+  <link rel="icon" type="image/png" href="favicon.png?v=3">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=3">
+  <link rel="apple-touch-icon" href="favicon.png?v=3">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="Just In Case logo" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Get Involved</a>
+          <ul class="dropdown-menu">
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="state-chapters.html">State Chapters</a></li>
+          </ul>
+        </li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#stats">Impact</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#donate" class="btn btn--nav">Donate</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="index.html#about">About</a>
+      <div class="dropdown-mobile">
+        <a href="#" class="dropdown-toggle-mobile">Get Involved</a>
+        <div class="dropdown-menu-mobile">
+          <a href="volunteer.html">Volunteer</a>
+          <a href="state-chapters.html">State Chapters</a>
+        </div>
+      </div>
+      <a href="stories.html">Stories</a>
+      <a href="index.html#team">Team</a>
+      <a href="index.html#stats">Impact</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#donate" class="btn btn--nav">Donate</a>
+    </div>
+  </nav>
+
+  <!-- VOLUNTEER SECTION -->
+  <section class="volunteer section">
+    <div class="container">
+      <p class="section__eyebrow">Join Us</p>
+      <h2 class="section__title">Volunteer Opportunities</h2>
+      <p class="volunteer__intro">At Just In Case, we believe that everyone has unique skills and talents that can contribute to building a more prepared community. Whether you're passionate about outreach, creative content, or spreading the word, there's a place for you on our team.</p>
+      <div class="volunteer__grid">
+        <div class="volunteer__card">
+          <div class="volunteer__icon">📢</div>
+          <h3>Outreach Team</h3>
+          <p>Connect with schools, community centers, and organizations to deliver emergency preparedness workshops and training sessions. Help us reach underserved communities and educate the next generation.</p>
+        </div>
+        <div class="volunteer__card">
+          <div class="volunteer__icon">🎨</div>
+          <h3>Content & Art Team</h3>
+          <p>Create engaging visuals, infographics, and educational materials. Use your artistic skills to design posters, social media graphics, and interactive content that makes emergency preparedness accessible and fun.</p>
+        </div>
+        <div class="volunteer__card">
+          <div class="volunteer__icon">📣</div>
+          <h3>Marketing Team</h3>
+          <p>Amplify our message through social media, email campaigns, and partnerships. Develop strategies to increase awareness and engagement with our mission to prepare communities for emergencies.</p>
+        </div>
+      </div>
+      <div class="volunteer__cta">
+        <p>Ready to make a difference? Join our volunteer team today!</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsCyhLShmouoz86IcV2lsKLJgNN_67ZFTvZDQNhcS0paT_BQ/viewform?usp=dialog" class="btn btn--primary">Sign Up to Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">
+          <img src="logo.png" alt="Just In Case logo" class="nav__logo-img" />
+        </a>
+        <p>Building a more prepared world, one community at a time.</p>
+      </div>
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4>Organization</h4>
+          <a href="index.html#about">About</a>
+          <a href="index.html#team">Team</a>
+          <a href="index.html#stats">Impact</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Get Involved</h4>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="state-chapters.html">State Chapters</a>
+          <a href="index.html#donate">Donate</a>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <a href="stories.html">Stories</a>
+          <a href="articles/">Articles</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2024 Just In Case. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

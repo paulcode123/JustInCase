@@ -35,6 +35,16 @@ if (hamburger && mobileMenu) {
   });
 }
 
+/* ---------- MOBILE DROPDOWN ---------- */
+const dropdownToggleMobile = document.querySelector('.dropdown-toggle-mobile');
+const dropdownMobile = document.querySelector('.dropdown-mobile');
+if (dropdownToggleMobile && dropdownMobile) {
+  dropdownToggleMobile.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownMobile.classList.toggle('open');
+  });
+}
+
 /* ---------- HERO CANVAS PARTICLE NETWORK ---------- */
 (function initCanvas() {
   const canvas = document.getElementById('heroCanvas');
