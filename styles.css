@@ -999,6 +999,18 @@ ul { list-style: none; }
   margin-bottom: 24px;
 }
 
+/* ---------- BUSINESSES ---------- */
+.businesses__cta {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.businesses__cta p {
+  font-size: 1.1rem;
+  color: var(--gray-700);
+  margin-bottom: 24px;
+}
+
 /* ---------- STATE CHAPTERS ---------- */
 .state-chapters__intro {
   font-size: 1.1rem;
