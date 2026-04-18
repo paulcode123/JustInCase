@@ -1,7 +1,7 @@
 {
   "name": "just-in-case",
   "version": "1.0.0",
-  "description": "Just In Case emergency preparedness website",
+  "description": "Just In Case of Emergency emergency preparedness website",
   "main": "index.html",
   "scripts": {
     "dev": "vercel dev",
