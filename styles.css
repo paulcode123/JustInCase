@@ -1160,6 +1160,16 @@ ul { list-style: none; }
 
 .contact__email-icon { font-size: 1.1rem; }
 
+.contact__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact__email-cta {
+  margin-top: 18px;
+}
+
 /* Form */
 .contact__form {
   background: var(--white);
