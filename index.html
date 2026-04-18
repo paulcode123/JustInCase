@@ -32,8 +32,6 @@
         </li>
         <li><a href="for-businesses.html">For Businesses</a></li>
         <li><a href="stories.html">Stories</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#stats">Impact</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="https://gofund.me/48956af9e" class="btn btn--nav">Donate</a>
@@ -52,8 +50,6 @@
       </div>
       <a href="for-businesses.html">For Businesses</a>
       <a href="stories.html">Stories</a>
-      <a href="#team">Team</a>
-      <a href="#stats">Impact</a>
       <a href="#contact">Contact</a>
       <a href="https://gofund.me/48956af9e" class="btn btn--nav">Donate</a>
     </div>
@@ -64,10 +60,6 @@
     <canvas class="hero__canvas" id="heroCanvas"></canvas>
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <div class="hero__badge">
-        <span class="hero__badge-dot"></span>
-        501(c)(3) Nonprofit Organization
-      </div>
       <h1 class="hero__headline">
         Emergency readiness<br />
         <span class="hero__headline-accent">for everyone.</span>
@@ -221,16 +213,55 @@
     <div class="container">
       <div class="testimonial__card">
         <div class="testimonial__quote-icon">"</div>
-        <blockquote class="testimonial__quote">
-          Before JICE, I never thought about what to do in a real emergency.
-          Their guides are clear, practical, and made for people my age.
-        </blockquote>
-        <div class="testimonial__author">
-          <div class="testimonial__avatar">DT</div>
-          <div>
-            <p class="testimonial__name">David Thompson</p>
-            <p class="testimonial__role">Community Member</p>
+        <div class="testimonial__slides">
+
+          <div class="testimonial__slide active">
+            <blockquote class="testimonial__quote">
+              Before JICE, I never thought about what to do in a real emergency.
+              Their guides are clear, practical, and made for people my age.
+            </blockquote>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">DT</div>
+              <div>
+                <p class="testimonial__name">David Thompson</p>
+                <p class="testimonial__role">Community Member</p>
+              </div>
+            </div>
           </div>
+
+          <div class="testimonial__slide">
+            <blockquote class="testimonial__quote">
+              JICE came to our school and completely changed how our students think
+              about safety. Every school should have this program.
+            </blockquote>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">ML</div>
+              <div>
+                <p class="testimonial__name">Maria Lopez</p>
+                <p class="testimonial__role">High School Teacher</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial__slide">
+            <blockquote class="testimonial__quote">
+              The volunteers are passionate and knowledgeable. I walked away
+              actually feeling confident I could help in an emergency.
+            </blockquote>
+            <div class="testimonial__author">
+              <div class="testimonial__avatar">JK</div>
+              <div>
+                <p class="testimonial__name">James Kim</p>
+                <p class="testimonial__role">Workshop Participant</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="testimonial__dots">
+          <button class="testimonial__dot active" data-index="0" aria-label="Quote 1"></button>
+          <button class="testimonial__dot" data-index="1" aria-label="Quote 2"></button>
+          <button class="testimonial__dot" data-index="2" aria-label="Quote 3"></button>
         </div>
       </div>
     </div>
@@ -374,13 +405,13 @@
           <div class="involved__icon">🗺️</div>
           <h3>State Chapters</h3>
           <p>Join or start a state chapter to bring emergency preparedness programs to your area.</p>
-          <a href="state-chapters.html" class="btn btn--primary">Learn More</a>
+          <a href="state-chapters.html" class="btn btn--secondary">Learn More</a>
         </div>
         <div class="involved__card" data-delay="200">
           <div class="involved__icon">💼</div>
           <h3>For Businesses</h3>
           <p>Partner with us to access free emergency resources or become a sponsor for greater local visibility.</p>
-          <a href="for-businesses.html" class="btn btn--primary">Learn More</a>
+          <a href="for-businesses.html" class="btn btn--secondary">Learn More</a>
         </div>
       </div>
     </div>

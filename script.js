@@ -623,3 +623,35 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }
   });
 });
+
+/* ---------- TESTIMONIAL CAROUSEL ---------- */
+(function () {
+  const slides = document.querySelectorAll('.testimonial__slide');
+  const dots   = document.querySelectorAll('.testimonial__dot');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function showSlide(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startTimer() {
+    timer = setInterval(() => showSlide(current + 1), 4000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(timer);
+      showSlide(parseInt(dot.dataset.index, 10));
+      startTimer();
+    });
+  });
+
+  startTimer();
+})();

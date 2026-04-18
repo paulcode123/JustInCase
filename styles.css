@@ -117,6 +117,17 @@ ul { list-style: none; }
   transform: translateY(-2px);
 }
 
+.btn--secondary {
+  background: #9ca3af;
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+}
+.btn--secondary:hover {
+  background: #6b7280;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+  transform: translateY(-2px);
+}
+
 .btn--ghost {
   background: rgba(255,255,255,.1);
   color: var(--white);
@@ -879,6 +890,47 @@ ul { list-style: none; }
 .testimonial__role {
   font-size: .85rem;
   color: var(--gray-500);
+}
+
+.testimonial__slides {
+  position: relative;
+  min-height: 160px;
+}
+
+.testimonial__slide {
+  display: none;
+  animation: fadeInQuote .5s ease;
+}
+
+.testimonial__slide.active {
+  display: block;
+}
+
+@keyframes fadeInQuote {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.testimonial__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.testimonial__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  padding: 0;
+  transition: background .3s;
+}
+
+.testimonial__dot.active {
+  background: var(--red);
 }
 
 /* ---------- GET INVOLVED ---------- */
