@@ -191,11 +191,6 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-.nav__logo-icon {
-  font-size: 1.4rem;
-  line-height: 1;
-}
-
 .nav__logo-img {
   height: 36px;
   width: auto;
@@ -1241,6 +1236,10 @@ ul { list-style: none; }
   padding-top: 64px;
 }
 
+.footer .nav__logo {
+  color: rgba(255,255,255,.62);
+}
+
 .footer__inner {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -1291,7 +1290,7 @@ ul { list-style: none; }
 }
 
 .footer__brand p {
-  color: var(--white);
+  color: rgba(255,255,255,.6);
   font-size: 1rem;
   margin: 12px 0 16px;
 }
@@ -1891,6 +1890,18 @@ ul { list-style: none; }
   color: var(--gray-700);
   line-height: 1.68;
   margin-top: 4px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-4px);
+  transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
+}
+
+.team-card__img-wrap:hover + .team-card__body .team-card__bio,
+.team-card:focus-within .team-card__bio {
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */

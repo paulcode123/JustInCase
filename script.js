@@ -180,7 +180,6 @@ document.querySelectorAll('.involved__card').forEach(card => {
 /* ---------- COUNTER ANIMATION ---------- */
 function animateCounter(el, target, duration = 1800) {
   const start = performance.now();
-  const isLarge = target >= 1000;
 
   function update(time) {
     const elapsed = time - start;
@@ -189,11 +188,7 @@ function animateCounter(el, target, duration = 1800) {
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = Math.round(eased * target);
 
-    if (isLarge && current >= 1000) {
-      el.textContent = (current / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
-    } else {
-      el.textContent = current.toLocaleString();
-    }
+    el.textContent = current.toLocaleString();
 
     if (progress < 1) requestAnimationFrame(update);
   }
