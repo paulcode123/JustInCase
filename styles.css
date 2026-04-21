@@ -1334,6 +1334,31 @@ ul { list-style: none; }
 }
 .footer__links a:hover { color: var(--white); }
 
+.footer__connect-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.86) !important;
+  font-weight: 600;
+}
+
+.footer__connect-btn:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.35);
+}
+
+.footer__connect-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 .footer__bottom {
   text-align: center;
   padding: 20px;
@@ -1945,13 +1970,14 @@ ul { list-style: none; }
   max-height: 0;
   opacity: 0;
   overflow: hidden;
+  overflow-wrap: anywhere;
   transform: translateY(-4px);
   transition: max-height .35s ease, opacity .25s ease, transform .25s ease;
 }
 
-.team-card__img-wrap:hover + .team-card__body .team-card__bio,
+.team-card:hover .team-card__bio,
 .team-card:focus-within .team-card__bio {
-  max-height: 260px;
+  max-height: 1000px;
   opacity: 1;
   transform: translateY(0);
 }
