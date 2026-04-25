@@ -207,6 +207,186 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
+/* ---------- STORIES ---------- */
+// Add new stories here to automatically populate the homepage and stories page.
+const STORIES = [
+  {
+    slug: 'what-to-do-in-the-first-5-minutes-of-an-emergency.html',
+    title: 'What to Do in the First 5 Minutes of an Emergency',
+    tag: 'Quick Guide',
+    author: 'Jessica Chen',
+    date: 'Apr 12, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80',
+    alt: 'Responders providing first aid in an emergency',
+    excerpt: 'The first five minutes are critical. Learn a practical step-by-step response before professional help arrives.'
+  },
+  {
+    slug: 'introduction-and-guide-to-cpr.html',
+    title: 'Introduction and Guide to CPR',
+    tag: 'Training',
+    author: 'Anthony Zhu',
+    date: 'Apr 12, 2026',
+    readTime: '3 min read',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80',
+    alt: 'Hands-on CPR practice session',
+    excerpt: 'CPR can triple survival rates. This beginner-friendly guide explains when and how to take action confidently.'
+  },
+  {
+    slug: 'how-to-recognize-and-respond-to-a-medical-emergency.html',
+    title: 'How to Recognize and Respond to a Medical Emergency',
+    tag: 'Response',
+    author: 'Chloe Qian',
+    date: 'Apr 12, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&q=80',
+    alt: 'Person assisting someone during a medical emergency',
+    excerpt: 'Spot the warning signs early, call for help quickly, and use calm, effective actions to protect someone in crisis.'
+  },
+  {
+    slug: 'what-is-an-aed-and-how-do-you-use-it.html',
+    title: 'What is an AED, and How Do You Use It?',
+    tag: 'Equipment',
+    author: 'Suri Liu',
+    date: 'Apr 12, 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&q=80',
+    alt: 'Automated external defibrillator in an emergency setting',
+    excerpt: 'Understand what AEDs do, when to use one, and the exact safety steps that can save a life during cardiac arrest.'
+  },
+  {
+    slug: 'choking-first-aid.html',
+    title: 'Choking First Aid',
+    tag: 'First Aid',
+    author: 'JICE Team',
+    date: 'Apr 18, 2026',
+    readTime: '2 min read',
+    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=1200&q=80',
+    alt: 'First aid training demonstration for choking response',
+    excerpt: 'Choking can turn fatal in seconds. Learn clear response steps for adults, children, and infants.'
+  },
+  {
+    slug: 'the-most-common-emergencies-at-home.html',
+    title: 'The Most Common Emergencies at Home',
+    tag: 'Home Safety',
+    author: 'Lydia Xia',
+    date: 'Apr 12, 2026',
+    readTime: '3 min read',
+    image: 'https://images.unsplash.com/photo-1444065381814-865dc9da92c0?w=1200&q=80',
+    alt: 'Family preparing a safe home emergency plan',
+    excerpt: 'From choking to cardiac events, discover the emergencies most likely to happen at home and how to prepare.'
+  },
+  {
+    slug: 'the-problem-with-emergency-services.html',
+    title: 'The Problem with Emergency Services',
+    tag: 'Article',
+    author: 'Alex Yang, Kevin Lin',
+    date: 'April 12, 2026',
+    readTime: '3-4 mins',
+    image: 'storycovers/_The%20Problem%20With%20Emergency%20Services_.webp',
+    alt: 'Ambulance in traffic during emergency response',
+    excerpt: 'Response times are rising. Understand why delays happen and what households can do while waiting for professional care.'
+  },
+  {
+    slug: 'mastering-emergency-responses-training-and-resources.html',
+    title: 'Mastering Emergency Responses: Training and Resources',
+    tag: 'Preparedness',
+    author: 'Lawrence Yan',
+    date: 'Aug 20, 2025',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80',
+    alt: 'Emergency response workshop with youth participants',
+    excerpt: 'Build confidence with practical training paths, trusted certifications, and community resources.'
+  },
+  {
+    slug: 'essential-emergency-education-for-future-generations.html',
+    title: 'Essential Emergency Education for Future Generations',
+    tag: 'Education',
+    author: 'Lawrence Yan',
+    date: 'Aug 20, 2025',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1200&q=80',
+    alt: 'Students learning emergency response skills',
+    excerpt: 'Emergency education equips the next generation to act quickly, think clearly, and protect their communities.'
+  },
+  {
+    slug: 'just-in-case-enhance-your-emergency-preparedness-skills.html',
+    title: 'JICE: Enhance Your Emergency Preparedness Skills',
+    tag: 'Community',
+    author: 'Lawrence Yan',
+    date: 'Aug 20, 2025',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=1200&q=80',
+    alt: 'Community members participating in preparedness training',
+    excerpt: 'Preparedness starts locally. Learn how JICE helps communities build life-saving readiness skills together.'
+  }
+];
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function buildStoryCard(story, featured = false) {
+  const featuredClass = featured ? ' story-card--featured' : '';
+
+  return `
+    <a href="articles/${story.slug}" class="story-card${featuredClass}">
+      <div class="story-card__img-wrap">
+        <img src="${escapeHtml(story.image)}" alt="${escapeHtml(story.alt)}" class="story-card__img" loading="lazy" />
+        <span class="story-card__tag">${escapeHtml(story.tag)}</span>
+      </div>
+      <div class="story-card__body">
+        <p class="story-card__meta">${escapeHtml(story.author)} · ${escapeHtml(story.date)} · ${escapeHtml(story.readTime)}</p>
+        <h3 class="story-card__title">${escapeHtml(story.title)}</h3>
+        <p class="story-card__excerpt">${escapeHtml(story.excerpt)}</p>
+        <span class="story-card__link">Read Story →</span>
+      </div>
+    </a>
+  `;
+}
+
+function applyStoryReveal(container) {
+  container.querySelectorAll('.story-card').forEach(card => {
+    card.classList.add('reveal');
+    revealObserver.observe(card);
+  });
+}
+
+function renderStories() {
+  const homepageGrid = document.querySelector('#stories .stories__grid');
+  if (homepageGrid) {
+    const homepageStories = STORIES.slice(0, 3);
+    homepageGrid.innerHTML = homepageStories
+      .map((story, index) => buildStoryCard(story, index === 0))
+      .join('');
+    applyStoryReveal(homepageGrid);
+  }
+
+  const featuredGrid = document.querySelector('#featured-stories .stories__grid');
+  if (featuredGrid) {
+    const featuredStories = STORIES.slice(0, 2);
+    featuredGrid.innerHTML = featuredStories
+      .map(story => buildStoryCard(story))
+      .join('');
+    applyStoryReveal(featuredGrid);
+  }
+
+  const allStoriesGrid = document.querySelector('#all-stories .stories__grid');
+  if (allStoriesGrid) {
+    allStoriesGrid.innerHTML = STORIES
+      .map(story => buildStoryCard(story))
+      .join('');
+    applyStoryReveal(allStoriesGrid);
+  }
+}
+
+renderStories();
+
 /* ---------- CONTACT FORM ---------- */
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
