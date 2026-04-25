@@ -213,68 +213,68 @@ const STORIES = [
   {
     slug: 'what-to-do-in-the-first-5-minutes-of-an-emergency.html',
     title: 'What to Do in the First 5 Minutes of an Emergency',
-    tag: 'Quick Guide',
-    author: 'Jessica Chen',
-    date: 'Apr 12, 2026',
-    readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&q=80',
+    tag: 'Article',
+    author: 'Jessica Chen, Melina Liu',
+    date: 'April 17, 2026',
+    readTime: '3-4 minutes',
+    image: 'storycovers/_What%20to%20Do%20in%20the%20First%205%20Minutes%20of%20an%20Emergency_.png',
     alt: 'Responders providing first aid in an emergency',
-    excerpt: 'The first five minutes are critical. Learn a practical step-by-step response before professional help arrives.'
+    excerpt: 'In any case of a real medical emergency, the very first 5 minutes is crucial. During this short time frame you must be able to know what to do before professional help arrives, but you don\'t know what to do. So, what can you do to help and not make the situation worse?'
   },
   {
     slug: 'introduction-and-guide-to-cpr.html',
     title: 'Introduction and Guide to CPR',
-    tag: 'Training',
-    author: 'Anthony Zhu',
-    date: 'Apr 12, 2026',
-    readTime: '3 min read',
+    tag: 'Manual',
+    author: 'Anthony Zhu, Brian Chen',
+    date: 'April 12, 2026',
+    readTime: '3 minutes',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80',
     alt: 'Hands-on CPR practice session',
-    excerpt: 'CPR can triple survival rates. This beginner-friendly guide explains when and how to take action confidently.'
+    excerpt: 'Over half a million cardiac arrests occur every year in the United States alone, so it is important to know what to do when you witness one. CPR can increase survival rates by up to three times, and it is not just for first responders to do. Bystanders can take action once they learn the essentials of CPR.'
   },
   {
     slug: 'how-to-recognize-and-respond-to-a-medical-emergency.html',
     title: 'How to Recognize and Respond to a Medical Emergency',
-    tag: 'Response',
-    author: 'Chloe Qian',
-    date: 'Apr 12, 2026',
-    readTime: '4 min read',
-    image: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1200&q=80',
+    tag: 'Article',
+    author: 'Chloe Qian, Austin Dong',
+    date: 'April 12, 2026',
+    readTime: '4 minutes',
+    image: 'storycovers/_How%20to%20Recognize%20and%20Respond%20to%20a%20Medical%20Emergency_.jpg',
     alt: 'Person assisting someone during a medical emergency',
-    excerpt: 'Spot the warning signs early, call for help quickly, and use calm, effective actions to protect someone in crisis.'
+    excerpt: 'Recognizing signs of a medical emergency is the first crucial step in providing efficient and effective care. This article details essential steps to both spotting and responding to a medical emergency, including calling 911, staying calm, and performing CPR.'
   },
   {
     slug: 'what-is-an-aed-and-how-do-you-use-it.html',
     title: 'What is an AED, and How Do You Use It?',
-    tag: 'Equipment',
-    author: 'Suri Liu',
-    date: 'Apr 12, 2026',
-    readTime: '4 min read',
+    tag: 'Manual',
+    author: 'Suri Liu, Eason Gao, Oscar Li',
+    date: 'April 12, 2026',
+    readTime: '3-4 minute read',
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&q=80',
     alt: 'Automated external defibrillator in an emergency setting',
-    excerpt: 'Understand what AEDs do, when to use one, and the exact safety steps that can save a life during cardiac arrest.'
+    excerpt: 'During a medical emergency, knowledge of operating devices such as automated external defibrillators, or AEDs, are crucial to ensure survival. The concept is simple; using electricity to shock an irregular or non-beating heart in hopes of restoring cardiac rhythm and function. Take a look at this manual, so that YOU know the safe and proper way to administer aid with an AED.'
   },
   {
     slug: 'choking-first-aid.html',
-    title: 'Choking First Aid',
-    tag: 'First Aid',
-    author: 'JICE Team',
-    date: 'Apr 18, 2026',
-    readTime: '2 min read',
+    title: 'A Guide to Choking First Aid',
+    tag: 'Manual',
+    author: 'Fiona Cheng, Sophie Jin',
+    date: 'April 18, 2026',
+    readTime: '2 minutes',
     image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=1200&q=80',
     alt: 'First aid training demonstration for choking response',
-    excerpt: 'Choking can turn fatal in seconds. Learn clear response steps for adults, children, and infants.'
+    excerpt: 'Over 5,000 people in the United States die from choking every year. Many are aware of the risks, but few actually know what to do in case of emergency. Read this manual so you can be prepared to quickly take action and save somebody from choking - a couple seconds can be the difference between life and death.'
   },
   {
     slug: 'the-most-common-emergencies-at-home.html',
     title: 'The Most Common Emergencies at Home',
-    tag: 'Home Safety',
-    author: 'Lydia Xia',
-    date: 'Apr 12, 2026',
-    readTime: '3 min read',
-    image: 'https://images.unsplash.com/photo-1444065381814-865dc9da92c0?w=1200&q=80',
-    alt: 'Family preparing a safe home emergency plan',
-    excerpt: 'From choking to cardiac events, discover the emergencies most likely to happen at home and how to prepare.'
+    tag: 'Article',
+    author: 'Lydia Xia, Ethan Tai',
+    date: 'April 12, 2026',
+    readTime: '3 mins',
+    image: 'storycovers/_The%20Most%20Common%20Emergencies%20at%20Home_.jpg',
+    alt: 'Family preparing for home medical emergencies',
+    excerpt: 'Household emergencies happen far too often, and many times, the people affected by them were not properly prepared. This can lead to emergencies like heart attacks and strokes, which are addressed in this article along with the medical procedures to prevent and save someone from these emergencies.'
   },
   {
     slug: 'the-problem-with-emergency-services.html',
