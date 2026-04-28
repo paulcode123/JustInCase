@@ -495,6 +495,70 @@ ul { list-style: none; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Inner pages: no canvas, restrained typography */
+.hero--page {
+  min-height: 0;
+  align-items: flex-end;
+  padding: 108px 0 48px;
+  background: var(--navy);
+}
+
+.hero--page .hero__overlay {
+  background: linear-gradient(
+    165deg,
+    rgba(6, 13, 31, 0.98) 0%,
+    rgba(13, 31, 60, 0.95) 48%,
+    rgba(22, 40, 72, 0.92) 100%
+  );
+}
+
+.hero--page .hero__content {
+  padding-top: 0;
+}
+
+.hero__breadcrumb {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero__breadcrumb a {
+  color: rgba(255, 255, 255, 0.55);
+  transition: var(--transition);
+}
+
+.hero__breadcrumb a:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.hero__breadcrumb-sep {
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0.5rem;
+}
+
+.hero__breadcrumb-current {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero__headline--page {
+  font-size: clamp(1.85rem, 3.8vw, 2.65rem);
+  margin-bottom: 1rem;
+  max-width: min(100%, 22rem);
+}
+
+.hero__sub--page {
+  max-width: 40rem;
+  margin-bottom: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero--page .hero__scroll-hint {
+  display: none;
+}
+
 /* ---------- HERO STORIES GRID ---------- */
 .hero .stories__grid {
   max-width: 100%;
@@ -1011,11 +1075,11 @@ ul { list-style: none; }
 
 /* ---------- VOLUNTEER ---------- */
 .volunteer__intro {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--gray-700);
-  line-height: 1.6;
-  margin-bottom: 52px;
-  max-width: 800px;
+  line-height: 1.65;
+  margin-bottom: 3rem;
+  max-width: 42rem;
 }
 
 .volunteer__grid {
@@ -1043,8 +1107,20 @@ ul { list-style: none; }
 }
 
 .volunteer__icon {
-  font-size: 2.5rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(230, 57, 70, 0.08);
+  color: var(--red);
+}
+
+.volunteer__icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .volunteer__card h3 {
@@ -1062,30 +1138,38 @@ ul { list-style: none; }
 }
 
 .volunteer__cta {
+  margin-top: 0.5rem;
+  padding: 2.5rem 2rem;
   text-align: center;
-  padding: 40px 0;
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
 }
 
 .volunteer__cta p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--gray-700);
-  margin-bottom: 24px;
+  margin-bottom: 1.25rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* ---------- BUSINESSES ---------- */
 .businesses__intro {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--gray-700);
-  line-height: 1.6;
-  margin-bottom: 52px;
-  max-width: 800px;
+  line-height: 1.65;
+  margin-bottom: 3rem;
+  max-width: 42rem;
 }
 
 .businesses__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  margin-bottom: 52px;
+  margin-bottom: 2rem;
 }
 
 .businesses__card {
@@ -1106,8 +1190,20 @@ ul { list-style: none; }
 }
 
 .businesses__icon {
-  font-size: 2.5rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(230, 57, 70, 0.08);
+  color: var(--red);
+}
+
+.businesses__icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .businesses__card h3 {
@@ -1125,64 +1221,97 @@ ul { list-style: none; }
 }
 
 .businesses__cta {
+  margin-top: 0.5rem;
+  padding: 2.5rem 2rem;
   text-align: center;
-  padding: 40px 0;
+  background: var(--off-white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
 }
 
 .businesses__cta p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--gray-700);
-  margin-bottom: 24px;
+  margin-bottom: 1.25rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* ---------- STATE CHAPTERS ---------- */
 .state-chapters__intro {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--gray-700);
-  line-height: 1.6;
-  margin-bottom: 52px;
-  max-width: 800px;
+  line-height: 1.65;
+  margin-bottom: 3rem;
+  max-width: 42rem;
 }
 
 .state-chapters__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 3.5rem;
   align-items: start;
 }
 
-.state-chapters__text h3 {
+.state-chapters__text .state-chapters__heading {
   font-family: var(--font-head);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .state-chapters__text p {
   color: var(--gray-700);
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
 }
 
 .state-chapters__text ul {
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin: 0 0 1.25rem 0;
+  padding: 0;
+  list-style: none;
 }
 
 .state-chapters__text li {
+  position: relative;
   color: var(--gray-700);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 8px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin-bottom: 0.75rem;
+  padding-left: 1.35rem;
+}
+
+.state-chapters__text li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
 }
 
 .state-chapters__cta {
-  background: var(--off-white);
+  background: var(--white);
   border-radius: var(--radius-md);
-  padding: 40px 32px;
+  padding: 2rem 1.75rem;
   border: 1px solid var(--gray-100);
+  box-shadow: var(--shadow-sm);
+}
+
+.state-chapters__cta-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.5rem;
 }
 
 .state-chapters__cta h3 {
@@ -1190,14 +1319,31 @@ ul { list-style: none; }
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 16px;
+  margin-bottom: 0.75rem;
 }
 
 .state-chapters__cta p {
   color: var(--gray-700);
-  font-size: .95rem;
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+}
+
+.state-chapters__cta-note {
+  margin-top: 1rem;
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.state-chapters__cta-note a {
+  color: var(--red);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.state-chapters__cta-note a:hover {
+  color: var(--red-dark);
 }
 
 /* ---------- CONTACT ---------- */
@@ -2515,6 +2661,10 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .section { padding: 72px 0; }
+
+  .hero--page {
+    padding: 92px 0 40px;
+  }
 
   .nav__links { display: none; }
   .nav > .btn--nav { display: none; }

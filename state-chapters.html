@@ -54,80 +54,91 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+  <!-- PAGE HERO -->
+  <section class="hero hero--page" aria-labelledby="chapters-heading">
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1 class="hero__headline">
-        State Chapters
-      </h1>
-      <p class="hero__sub">
-        Just In Case of Emergency is actively expanding to bring emergency preparedness education to communities across the United States. We are currently establishing new state chapters to ensure that every state has access to our workshops, training, and resources.
+    <div class="container hero__content">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="hero__breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="hero__breadcrumb-current">State chapters</span>
+      </nav>
+      <h1 id="chapters-heading" class="hero__headline hero__headline--page">State chapters</h1>
+      <p class="hero__sub hero__sub--page">
+        Local chapters extend our workshops and resources so preparedness reaches every community—built around state-specific risks and partners on the ground.
       </p>
-    </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
   <!-- STATE CHAPTERS SECTION -->
   <section class="state-chapters section">
     <div class="container">
+      <p class="section__eyebrow">Expansion</p>
+      <h2 class="section__title">Local leadership, nationwide reach</h2>
+      <p class="state-chapters__intro">
+        Just In Case of Emergency is growing state chapters across the U.S. Each chapter adapts programming to regional hazards while staying aligned with our mission and materials.
+      </p>
+
       <div class="state-chapters__content">
         <div class="state-chapters__text">
-          <h3>Why State Chapters?</h3>
-          <p>Each state faces unique emergency risks, from natural disasters to community-specific challenges. By creating localized chapters, we can:</p>
+          <h3 class="state-chapters__heading">Why chapters matter</h3>
+          <p>Hazards and institutions vary by state. Chapters let us tailor outreach while deepening relationships close to home.</p>
           <ul>
-            <li>Tailor our programs to address state-specific emergency preparedness needs</li>
-            <li>Build stronger partnerships with local schools, organizations, and government agencies</li>
-            <li>Increase our reach and impact in underserved areas</li>
-            <li>Foster community leadership and engagement at the state level</li>
+            <li>Align workshops with region-specific risks and seasonal preparedness priorities</li>
+            <li>Partner with schools, nonprofits, and agencies that serve local populations</li>
+            <li>Increase capacity in underserved areas through volunteer leadership</li>
+            <li>Represent JICE consistently while reflecting community context</li>
           </ul>
-          <p>We are committed to growing our network and bringing our mission to every corner of the country. If you're passionate about emergency preparedness and want to lead a chapter in your state, we want to hear from you!</p>
+          <p>If you care about preparedness and coalition-building in your state, chapter leadership may be a strong fit.</p>
         </div>
-        <div class="state-chapters__cta">
-          <h3>Start a State Chapter</h3>
-          <p>Interested in leading emergency preparedness efforts in your state? Apply to become a state chapter leader and help us expand our reach.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIe3rxQbpSOcWwQq_MiyZoCQ9gxk10riKYGc4s-1x_pl4uhA/viewform?usp=publish-editor" class="btn btn--primary">Apply for State Chapter</a>
-        </div>
+        <aside class="state-chapters__cta">
+          <span class="state-chapters__cta-label">Leadership</span>
+          <h3>Start or grow a chapter</h3>
+          <p>Use the application to describe your background, proposed geography, and how you would recruit partners and volunteers.</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfIe3rxQbpSOcWwQq_MiyZoCQ9gxk10riKYGc4s-1x_pl4uhA/viewform?usp=publish-editor" class="btn btn--primary">Chapter leader application</a>
+          <p class="state-chapters__cta-note">Questions before you apply? Reach us at <a href="mailto:justincaseofemergencyedu@gmail.com">justincaseofemergencyedu@gmail.com</a>.</p>
+        </aside>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="index.html" class="nav__logo">
-          <img src="logo.png" alt="JICE logo" class="nav__logo-img" />
+          <span class="nav__logo-text">Just In Case of Emergency</span>
         </a>
-        <p>Building a more prepared world, one community at a time.</p>
+        <p class="footer__tagline">Emergency readiness for everyone.</p>
+        <p class="footer__legal">Just In Case of Emergency Inc. is a registered 501(c)(3) nonprofit organization.</p>
       </div>
       <div class="footer__links">
-        <div class="footer__col">
-          <h4>Organization</h4>
-          <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
-        <div class="footer__col">
-          <h4>Get Involved</h4>
-          <a href="volunteer.html">Volunteer</a>
-          <a href="state-chapters.html">State Chapters</a>
-          <a href="https://gofund.me/48956af9e">Donate</a>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <a href="stories.html">Stories</a>
-          <a href="articles/">Articles</a>
-        </div>
+        <h4>Navigate</h4>
+        <a href="index.html#about">About</a>
+        <a href="stories.html">Stories</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#stats">Impact</a>
+        <a href="index.html#get-involved">Get Involved</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer__links">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/justincaseofemergencyedu/" class="footer__connect-btn" aria-label="Visit us on Instagram">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.95 1.35a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"></path>
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <a href="mailto:justincaseofemergencyedu@gmail.com" class="footer__connect-btn" aria-label="Send us an email">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.3l9 5.7 9-5.7V7H3zm18 10V9.4l-8.46 5.35a1 1 0 0 1-1.08 0L3 9.4V17h18z"></path>
+          </svg>
+          <span>Email</span>
+        </a>
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2024 Just In Case of Emergency. All rights reserved.</p>
-      </div>
+      <p>© 2026 Just In Case of Emergency Inc. All rights reserved.</p>
     </div>
   </footer>
 

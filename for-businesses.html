@@ -54,77 +54,90 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+  <!-- PAGE HERO -->
+  <section class="hero hero--page" aria-labelledby="businesses-heading">
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1 class="hero__headline">For Businesses</h1>
-      <p class="hero__sub">Partner with Just In Case of Emergency to strengthen your emergency readiness, protect your team, and support community preparedness.</p>
-    </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
+    <div class="container hero__content">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="hero__breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="hero__breadcrumb-current">For businesses</span>
+      </nav>
+      <h1 id="businesses-heading" class="hero__headline hero__headline--page">For businesses</h1>
+      <p class="hero__sub hero__sub--page">
+        Workplace readiness guidance and sponsorship options that connect your organization to community preparedness—at no cost for resource sign-up.
+      </p>
     </div>
   </section>
 
   <section class="businesses section">
     <div class="container">
-      <p class="section__eyebrow">Business Support</p>
-      <h2 class="section__title">Resources and sponsorship programs for businesses.</h2>
-      <p class="businesses__intro">We reach out to over 200 businesses every month to offer free emergency readiness support and sponsorship opportunities that help your brand stand out in the community. Partner with Just In Case of Emergency to receive free expert guidance from paramedics, recommended supplies and manuals, visibility on our materials, and access to our growing network of businesses.</p>
+      <p class="section__eyebrow">Partnerships</p>
+      <h2 class="section__title">Resources and sponsorship</h2>
+      <p class="businesses__intro">
+        Each month we contact hundreds of businesses to offer free emergency readiness support and optional sponsorship. Partners receive paramedic-informed guidance, practical checklists and supply recommendations, and—when applicable—visibility on materials that reach workplaces and the public.
+      </p>
 
       <div class="businesses__grid">
-        <div class="businesses__card">
-          <div class="businesses__icon">🧰</div>
-          <h3>Sign up for emergency resources</h3>
-          <p>Receive free paramedic assessments, recommended supply lists, manuals, and practical workplace readiness guidance to strengthen your business's emergency preparedness.</p>
-        </div>
-        <div class="businesses__card">
-          <div class="businesses__icon">🤝</div>
-          <h3>Become a sponsor</h3>
-          <p>In exchange for donations that support our services, sponsors are front and center on resources given to over 200 businesses and even more individuals a month. Gain exposure on our printed materials, workshops, and community programs.</p>
-        </div>
+        <article class="businesses__card">
+          <div class="businesses__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.325c0 1.094-.878 1.982-1.964 2.025a49.563 49.563 0 01-15.972 0C4.428 21.457 3 20.558 3 19.452v-4.325m17.25 0c-.587-.584-1.262-.884-2.042-.884h-12.416c-.78 0-1.454.3-2.042.884m17.25 0V11.85c0-1.063-.848-1.922-1.896-1.922h-12.416c-1.048 0-1.896.859-1.896 1.922v2.4m17.25 0h-17.25M9 11.25v2.25m6-2.25v2.25"/></svg>
+          </div>
+          <h3>Emergency resources</h3>
+          <p>Request assessments, recommended supply lists, manuals, and workplace-focused readiness steps aligned with how your team actually operates.</p>
+        </article>
+        <article class="businesses__card">
+          <div class="businesses__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a2.25 2.25 0 01-2.25 2.25H5.25a2.25 2.25 0 01-2.25-2.25v-8.25m18 0V9.75a2.25 2.25 0 00-2.25-2.25H5.25a2.25 2.25 0 00-2.25 2.25v1.5m18 0h-18m18 0l-.004 5.646a3.375 3.375 0 01-6.688 0L15 18M9 18l-.004 5.646a3.375 3.375 0 01-6.688 0L3 18"/></svg>
+          </div>
+          <h3>Sponsorship</h3>
+          <p>Support our programs in exchange for recognition on printed resources, workshops, and community outreach—reaching businesses and individuals well beyond a single location.</p>
+        </article>
       </div>
 
       <div class="businesses__cta">
-        <p>Ready to strengthen your business's emergency preparedness or support our mission? Contact us today and we'll respond quickly!</p>
-        <a href="mailto:justincaseofemergencyedu@gmail.com?subject=Business%20Inquiry" class="btn btn--primary">Get In Touch</a>
+        <p>Ask about free resources or sponsorship. We aim to reply within a few business days.</p>
+        <a href="mailto:justincaseofemergencyedu@gmail.com?subject=Business%20inquiry" class="btn btn--primary">Email the team</a>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="index.html" class="nav__logo">
-          <img src="logo.png" alt="JICE logo" class="nav__logo-img" />
+          <span class="nav__logo-text">Just In Case of Emergency</span>
         </a>
-        <p>Building a more prepared world, one community at a time.</p>
+        <p class="footer__tagline">Emergency readiness for everyone.</p>
+        <p class="footer__legal">Just In Case of Emergency Inc. is a registered 501(c)(3) nonprofit organization.</p>
       </div>
       <div class="footer__links">
-        <div class="footer__col">
-          <h4>Organization</h4>
-          <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
-        <div class="footer__col">
-          <h4>Get Involved</h4>
-          <a href="volunteer.html">Volunteer</a>
-          <a href="state-chapters.html">State Chapters</a>
-          <a href="https://gofund.me/48956af9e">Donate</a>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <a href="stories.html">Stories</a>
-          <a href="articles/">Articles</a>
-        </div>
+        <h4>Navigate</h4>
+        <a href="index.html#about">About</a>
+        <a href="stories.html">Stories</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#stats">Impact</a>
+        <a href="index.html#get-involved">Get Involved</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer__links">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/justincaseofemergencyedu/" class="footer__connect-btn" aria-label="Visit us on Instagram">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.95 1.35a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"></path>
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <a href="mailto:justincaseofemergencyedu@gmail.com" class="footer__connect-btn" aria-label="Send us an email">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.3l9 5.7 9-5.7V7H3zm18 10V9.4l-8.46 5.35a1 1 0 0 1-1.08 0L3 9.4V17h18z"></path>
+          </svg>
+          <span>Email</span>
+        </a>
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2026 Just In Case of Emergency. All rights reserved.</p>
-      </div>
+      <p>© 2026 Just In Case of Emergency Inc. All rights reserved.</p>
     </div>
   </footer>
 

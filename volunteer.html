@@ -54,83 +54,99 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+  <!-- PAGE HERO -->
+  <section class="hero hero--page" aria-labelledby="volunteer-heading">
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1 class="hero__headline">
-        Volunteer Opportunities
-      </h1>
-      <p class="hero__sub">
-        At Just In Case of Emergency, we believe that everyone has unique skills and talents that can contribute to building a more prepared community. Whether you're passionate about outreach, creative content, or spreading the word, there's a place for you on our team.
+    <div class="container hero__content">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="hero__breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="hero__breadcrumb-current">Volunteer</span>
+      </nav>
+      <h1 id="volunteer-heading" class="hero__headline hero__headline--page">Volunteer with JICE</h1>
+      <p class="hero__sub hero__sub--page">
+        Join a nonprofit team bringing emergency preparedness education to schools and communities across the country.
       </p>
-    </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
   <!-- VOLUNTEER SECTION -->
   <section class="volunteer section">
     <div class="container">
+      <p class="section__eyebrow">Teams</p>
+      <h2 class="section__title">Where your skills fit</h2>
+      <p class="volunteer__intro">
+        Volunteers support outreach, creative production, and communications. Roles are flexible; we match you with projects that fit your schedule and strengths.
+      </p>
+
       <div class="volunteer__grid">
-        <div class="volunteer__card">
-          <div class="volunteer__icon">📢</div>
-          <h3>Outreach Team</h3>
-          <p>Connect with schools, community centers, and organizations to deliver emergency preparedness workshops and training sessions. Help us reach underserved communities and educate the next generation.</p>
-        </div>
-        <div class="volunteer__card">
-          <div class="volunteer__icon">🎨</div>
-          <h3>Content & Art Team</h3>
-          <p>Create engaging visuals, infographics, and educational materials. Use your artistic skills to design posters, social media graphics, and interactive content that makes emergency preparedness accessible and fun.</p>
-        </div>
-        <div class="volunteer__card">
-          <div class="volunteer__icon">📣</div>
-          <h3>Marketing Team</h3>
-          <p>Amplify our message through social media, email campaigns, and partnerships. Develop strategies to increase awareness and engagement with our mission to prepare communities for emergencies.</p>
-        </div>
+        <article class="volunteer__card">
+          <div class="volunteer__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.433-2.493 9.125 9.125 0 002.491 3.073zM12 20c-4.243 0-8-2.686-8-6 0-2.015 1.114-3.855 3-5.15v.05a4.94 4.94 0 00.25 1.5C6.5 7.5 7.5 6 9 6s2.5 1.5 2.25 3.35a4.94 4.94 0 00.25 1.5c1.886 1.295 3 3.135 3 5.15 0 3.314-3.757 6-8 6z"/></svg>
+          </div>
+          <h3>Outreach</h3>
+          <p>Coordinate with schools, community centers, and partner organizations to schedule workshops and training. Help expand access for underserved communities.</p>
+        </article>
+        <article class="volunteer__card">
+          <div class="volunteer__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+          </div>
+          <h3>Content &amp; art</h3>
+          <p>Produce visuals, diagrams, and educational material that make safety guidance clear and easy to use in print and online.</p>
+        </article>
+        <article class="volunteer__card">
+          <div class="volunteer__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.34 3.94c.09.542.56.94 1.11.94h1.093c.477 0 .866-.376.986-.884l.375-1.5c.147-.586.697-.954 1.278-.894 2.563.296 5.013 1.218 7.215 2.695a1.105 1.105 0 01.267 1.62l-1.94 2.336a1.105 1.105 0 01-.935.447 48.733 48.733 0 01-8.036 0 1.105 1.105 0 01-.935-.447l-1.94-2.336a1.105 1.105 0 01.267-1.62 17.876 17.876 0 017.215-2.695 1.104 1.104 0 011.278.894l.375 1.5z"/></svg>
+          </div>
+          <h3>Marketing</h3>
+          <p>Support social channels, messaging, and partnerships so more people hear about free preparedness resources and upcoming events.</p>
+        </article>
       </div>
+
       <div class="volunteer__cta">
-        <p>Ready to make a difference? Join our volunteer team today!</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsCyhLShmouoz86IcV2lsKLJgNN_67ZFTvZDQNhcS0paT_BQ/viewform?usp=dialog" class="btn btn--primary">Sign Up to Volunteer</a>
+        <p>Tell us about your interests and availability. We follow up with next steps after you submit the form.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsCyhLShmouoz86IcV2lsKLJgNN_67ZFTvZDQNhcS0paT_BQ/viewform?usp=dialog" class="btn btn--primary">Apply to volunteer</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" id="contact">
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="index.html" class="nav__logo">
-          <img src="logo.png" alt="JICE logo" class="nav__logo-img" />
+          <span class="nav__logo-text">Just In Case of Emergency</span>
         </a>
-        <p>Building a more prepared world, one community at a time.</p>
+        <p class="footer__tagline">Emergency readiness for everyone.</p>
+        <p class="footer__legal">Just In Case of Emergency Inc. is a registered 501(c)(3) nonprofit organization.</p>
       </div>
       <div class="footer__links">
-        <div class="footer__col">
-          <h4>Organization</h4>
-          <a href="index.html#about">About</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
-        <div class="footer__col">
-          <h4>Get Involved</h4>
-          <a href="volunteer.html">Volunteer</a>
-          <a href="state-chapters.html">State Chapters</a>
-          <a href="https://gofund.me/48956af9e">Donate</a>
-        </div>
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <a href="stories.html">Stories</a>
-          <a href="articles/">Articles</a>
-        </div>
+        <h4>Navigate</h4>
+        <a href="index.html#about">About</a>
+        <a href="stories.html">Stories</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#stats">Impact</a>
+        <a href="index.html#get-involved">Get Involved</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer__links">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/justincaseofemergencyedu/" class="footer__connect-btn" aria-label="Visit us on Instagram">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.95 1.35a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"></path>
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <a href="mailto:justincaseofemergencyedu@gmail.com" class="footer__connect-btn" aria-label="Send us an email">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.3l9 5.7 9-5.7V7H3zm18 10V9.4l-8.46 5.35a1 1 0 0 1-1.08 0L3 9.4V17h18z"></path>
+          </svg>
+          <span>Email</span>
+        </a>
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2024 Just In Case of Emergency. All rights reserved.</p>
-      </div>
+      <p>© 2026 Just In Case of Emergency Inc. All rights reserved.</p>
     </div>
   </footer>
 
