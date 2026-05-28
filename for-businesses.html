@@ -65,41 +65,110 @@
       </nav>
       <h1 id="businesses-heading" class="hero__headline hero__headline--page">For businesses</h1>
       <p class="hero__sub hero__sub--page">
-        Workplace readiness guidance and sponsorship options that connect your organization to community preparedness—at no cost for resource sign-up.
+        Hands-on emergency preparedness training and free workshops for your team, workplace, or community organization.
       </p>
     </div>
   </section>
 
   <section class="businesses section">
     <div class="container">
-      <p class="section__eyebrow">Partnerships</p>
-      <h2 class="section__title">Resources and sponsorship</h2>
+      <p class="section__eyebrow">Workplace &amp; community</p>
+      <h2 class="section__title">Emergency preparedness for your organization</h2>
       <p class="businesses__intro">
-        Each month we contact hundreds of businesses to offer free emergency readiness support and optional sponsorship. Partners receive paramedic-informed guidance, practical checklists and supply recommendations, and—when applicable—visibility on materials that reach workplaces and the public.
+        Along with teaching students, Just In Case of Emergency helps businesses, community centers, and organizations feel more prepared when real emergencies happen. Choose the path that fits your needs below.
       </p>
 
-      <div class="businesses__grid">
-        <article class="businesses__card">
-          <div class="businesses__icon" aria-hidden="true">
-            <!-- Shield check: readiness / protection -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
-          <h3>Emergency resources</h3>
-          <p>Request assessments, recommended supply lists, manuals, and workplace-focused readiness steps aligned with how your team actually operates.</p>
-        </article>
-        <article class="businesses__card">
-          <div class="businesses__icon" aria-hidden="true">
-            <!-- Award: sponsor recognition -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          </div>
-          <h3>Sponsorship</h3>
-          <p>Support our programs in exchange for recognition on printed resources, workshops, and community outreach—reaching businesses and individuals well beyond a single location.</p>
-        </article>
+      <div class="businesses__tabs" role="tablist" aria-label="Business services">
+        <button type="button" class="businesses__tab is-active" role="tab" id="tab-trained" aria-selected="true" aria-controls="panel-trained">Get Trained</button>
+        <button type="button" class="businesses__tab" role="tab" id="tab-workshop" aria-selected="false" aria-controls="panel-workshop" tabindex="-1" data-hash="host-workshop">Host a Workshop</button>
       </div>
 
-      <div class="businesses__cta">
-        <p>Ask about free resources or sponsorship. We aim to reply within a few business days.</p>
-        <a href="mailto:justincaseofemergencyedu@gmail.com?subject=Business%20inquiry" class="btn btn--primary">Email the team</a>
+      <!-- GET TRAINED -->
+      <div class="businesses__panel is-active" role="tabpanel" id="panel-trained" aria-labelledby="tab-trained">
+        <div class="businesses__panel-layout">
+          <div class="businesses__panel-main">
+            <p class="businesses__lead">
+              Our trainings are led by experienced paramedics, firefighters, law enforcement professionals, and military veterans — people who understand what it means to respond when every second matters.
+            </p>
+            <p>
+              Whether it’s CPR, choking, bleeding control, overdose response, or knowing what to do before emergency personnel arrive, our goal is simple: make life-saving skills clear, practical, and less intimidating for everyday people.
+            </p>
+            <p>
+              To request any of the services below, please fill out our <a href="https://forms.gle/jG51sHKy7A5FZUFfA" class="businesses__link" target="_blank" rel="noopener noreferrer">Google Form</a>, and someone from our team will reach out to you shortly.
+            </p>
+
+            <div class="businesses__services">
+              <article class="businesses__service">
+                <h3>CPR Certification</h3>
+                <p>Need CPR certification for work, school, or just want to be prepared? JICE paramedics can come to your location and provide official American Heart Association (AHA) CPR certification. This hands-on class covers CPR, choking recognition and response, and basic emergency steps in a simple, easy-to-follow way.</p>
+              </article>
+              <article class="businesses__service">
+                <h3>Get an AED</h3>
+                <p>Not sure what an AED is or how it works? You’re not alone. An AED is a life-saving device used during sudden cardiac emergencies. We can help your organization get one at a subsidized price and teach your team when and how to use it.</p>
+              </article>
+              <article class="businesses__service">
+                <h3>Risk Assessment Training</h3>
+                <p>Have you ever called 911 and wondered what they’ll ask, what they’ll need, or what you should do while waiting for help? Our team can walk through your space, identify safety concerns, and help you build an emergency action plan so your staff feels more confident and prepared.</p>
+              </article>
+              <article class="businesses__service">
+                <h3>Posters &amp; Manuals</h3>
+                <p>We offer printed posters and manuals with simple, easy-to-read instructions for common emergencies, including adult, child, and infant choking, bleeding control, and more.</p>
+              </article>
+              <article class="businesses__service">
+                <h3>Additional Training</h3>
+                <p>We also offer Stop the Bleed classes, accidental overdose and Narcan training, and other Emergency First Aid certifications.</p>
+              </article>
+            </div>
+
+            <p class="businesses__note">Please feel free to <a href="mailto:justincaseofemergencyedu@gmail.com">contact us</a> with any questions.</p>
+
+            <div class="businesses__cta">
+              <a href="https://forms.gle/jG51sHKy7A5FZUFfA" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Request training</a>
+            </div>
+          </div>
+
+          <aside class="businesses__panel-aside" aria-label="Training photos">
+            <div class="businesses__photo-stack">
+              <img src="workshop-photos/workshop-01.jpg" alt="JICE team leading an emergency preparedness session" width="600" height="400" loading="lazy" />
+              <img src="workshop-photos/workshop-03.jpg" alt="Participants practicing hands-on emergency skills" width="600" height="400" loading="lazy" />
+              <img src="workshop-photos/workshop-06.jpg" alt="Community training workshop with JICE instructors" width="600" height="400" loading="lazy" />
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <!-- HOST A WORKSHOP -->
+      <div class="businesses__panel" role="tabpanel" id="panel-workshop" aria-labelledby="tab-workshop" hidden>
+        <div class="businesses__gallery" aria-label="JICE workshop photos">
+          <img src="workshop-photos/workshop-02.jpg" alt="JICE workshop with community participants" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-04.jpg" alt="Hands-on emergency preparedness demonstration" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-05.jpg" alt="Students learning lifesaving skills at a JICE workshop" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-07.jpg" alt="JICE instructor teaching at a community event" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-08.jpg" alt="Workshop participants practicing emergency response" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-09.jpg" alt="Group learning session led by JICE volunteers" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-10.jpg" alt="Community center emergency preparedness workshop" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-11.jpg" alt="Interactive first aid and safety workshop" width="800" height="600" loading="lazy" />
+          <img src="workshop-photos/workshop-12.jpg" alt="JICE team engaging with workshop attendees" width="800" height="600" loading="lazy" />
+        </div>
+
+        <div class="businesses__panel-main businesses__panel-main--full">
+          <p class="businesses__lead">
+            JICE hopes to educate people of all ages and backgrounds on emergency preparedness through our workshops. We work with schools, community groups, centers, and more to best provide our education.
+          </p>
+          <p>
+            Whether your audience is students, parents, seniors, volunteers, or community members, we work with you for free to create a workshop that fits your space, goals, and audience.
+          </p>
+          <p>
+            Hosts can choose from existing workshop ideas or design a custom workshop with us. Topics may include emergency preparedness, CPR awareness, basic first aid, bleeding control, choking response, family safety planning, and community safety.
+          </p>
+          <p>
+            If you are interested in hosting a JICE workshop, fill out our <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFEp5Cg_H8keWD5UP_illiIMVSsFsnl0bw9uT2p5ItDdpgFg/viewform?usp=dialog" class="businesses__link" target="_blank" rel="noopener noreferrer">Google Form</a>, and we will contact you shortly.
+          </p>
+
+          <div class="businesses__cta">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFEp5Cg_H8keWD5UP_illiIMVSsFsnl0bw9uT2p5ItDdpgFg/viewform?usp=dialog" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Host a workshop</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

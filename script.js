@@ -45,6 +45,47 @@ if (dropdownToggleMobile && dropdownMobile) {
   });
 }
 
+/* ---------- FOR BUSINESSES TABS ---------- */
+(function initBusinessesTabs() {
+  const tabs = document.querySelectorAll('.businesses__tab');
+  const panels = document.querySelectorAll('.businesses__panel');
+  if (!tabs.length || !panels.length) return;
+
+  function activateTab(tab) {
+    tabs.forEach(t => {
+      const active = t === tab;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', active);
+      t.tabIndex = active ? 0 : -1;
+    });
+    panels.forEach(p => {
+      const active = p.id === tab.getAttribute('aria-controls');
+      p.classList.toggle('is-active', active);
+      p.hidden = !active;
+    });
+    const hash = tab.dataset.hash;
+    history.replaceState(null, '', hash ? `#${hash}` : location.pathname);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      const i = Array.from(tabs).indexOf(tab);
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        activateTab(tabs[(i + 1) % tabs.length]);
+        tabs[(i + 1) % tabs.length].focus();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        activateTab(tabs[(i - 1 + tabs.length) % tabs.length]);
+        tabs[(i - 1 + tabs.length) % tabs.length].focus();
+      }
+    });
+  });
+
+  if (location.hash === '#host-workshop') activateTab(tabs[1]);
+})();
+
 /* ---------- HERO CANVAS PARTICLE NETWORK ---------- */
 (function initCanvas() {
   const canvas = document.getElementById('heroCanvas');
