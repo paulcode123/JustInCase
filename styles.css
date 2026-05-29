@@ -604,6 +604,16 @@ ul { list-style: none; }
   margin-top: 60px;
 }
 
+.stories__disclaimer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 48px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.45);
+  text-align: center;
+}
+
 /* ---------- MISSION STRIP ---------- */
 .mission-strip {
   background: var(--off-white);
