@@ -194,6 +194,15 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
+const storiesRevealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      storiesRevealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+
 document.querySelectorAll(
   '.about__grid, .story-card, .testimonial__card, .contact__grid, .stats__card, .mission-strip__item, .team-card, .action-row, .gallery__img'
 ).forEach(el => {
@@ -372,11 +381,29 @@ function escapeHtml(value) {
     .replaceAll("'", '&#39;');
 }
 
-function buildStoryCard(story, featured = false) {
+function buildStoryCard(story, options = {}) {
+  const { featured = false, homepage = false } = options;
   const featuredClass = featured ? ' story-card--featured' : '';
+  const articleUrl = `articles/${story.slug}`;
+
+  if (homepage) {
+    return `
+      <a href="${articleUrl}" class="story-card${featuredClass}">
+        <div class="story-card__img-wrap">
+          <img src="${escapeHtml(story.image)}" alt="${escapeHtml(story.alt)}" class="story-card__img" loading="lazy" />
+          <span class="story-card__tag">${escapeHtml(story.tag)}</span>
+        </div>
+        <div class="story-card__body">
+          <p class="story-card__meta">${escapeHtml(story.author)} · ${escapeHtml(story.date)} · ${escapeHtml(story.readTime)}</p>
+          <h3 class="story-card__title">${escapeHtml(story.title)}</h3>
+          <span class="story-card__link">Read Story →</span>
+        </div>
+      </a>
+    `;
+  }
 
   return `
-    <a href="articles/${story.slug}" class="story-card${featuredClass}">
+    <a href="${articleUrl}" class="story-card${featuredClass}">
       <div class="story-card__img-wrap">
         <img src="${escapeHtml(story.image)}" alt="${escapeHtml(story.alt)}" class="story-card__img" loading="lazy" />
         <span class="story-card__tag">${escapeHtml(story.tag)}</span>
@@ -392,10 +419,29 @@ function buildStoryCard(story, featured = false) {
 }
 
 function applyStoryReveal(container) {
-  container.querySelectorAll('.story-card').forEach(card => {
+  const inFeatureSection = container.closest('.stories--feature');
+  const observer = inFeatureSection ? storiesRevealObserver : revealObserver;
+
+  container.querySelectorAll('.story-card').forEach((card, i) => {
     card.classList.add('reveal');
-    revealObserver.observe(card);
+    if (inFeatureSection) card.style.transitionDelay = `${i * 0.14}s`;
+    observer.observe(card);
   });
+
+  if (inFeatureSection) {
+    const section = container.closest('.stories--feature');
+    const header = section?.querySelector('.stories-feature__header');
+    if (header && !header.classList.contains('reveal')) {
+      header.classList.add('reveal');
+      storiesRevealObserver.observe(header);
+    }
+    const actions = section?.querySelector('.stories-feature__actions');
+    if (actions && !actions.classList.contains('reveal')) {
+      actions.classList.add('reveal');
+      actions.style.transitionDelay = '0.35s';
+      storiesRevealObserver.observe(actions);
+    }
+  }
 }
 
 function renderStories() {
@@ -403,7 +449,7 @@ function renderStories() {
   if (homepageGrid) {
     const homepageStories = STORIES.slice(0, 3);
     homepageGrid.innerHTML = homepageStories
-      .map(story => buildStoryCard(story))
+      .map(story => buildStoryCard(story, { homepage: true }))
       .join('');
     applyStoryReveal(homepageGrid);
   }
