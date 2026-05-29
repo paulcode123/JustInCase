@@ -641,7 +641,7 @@ ul { list-style: none; }
 
 /* ---------- ABOUT ---------- */
 section.about {
-  background: linear-gradient(to bottom, var(--white) 70%, var(--off-white) 100%);
+  background: linear-gradient(to bottom, var(--white) 0%, var(--white) 92%, var(--off-white) 100%);
 }
 
 .about__grid {
@@ -841,20 +841,20 @@ section.about {
   display: block;
   flex: 0 0 56px;
   height: 2px;
-  background: var(--white);
+  background: var(--red);
 }
 .stories-feature__header::after {
   content: '';
   display: block;
   flex: 1;
   height: 2px;
-  background: var(--white);
+  background: var(--red);
 }
 .stories-feature__title {
   font-family: var(--font-head);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
-  color: var(--white);
+  color: var(--red);
   letter-spacing: -.02em;
   line-height: 1.1;
   margin: 0;
