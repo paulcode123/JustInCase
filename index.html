@@ -57,7 +57,16 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__collage" aria-hidden="true">
+      <img src="workshop-photos/IMG_6501.JPG" alt="" loading="eager" />
+      <img src="workshop-photos/workshop-04.jpg" alt="" loading="eager" />
+      <img src="workshop-photos/IMG_6510.JPG" alt="" loading="eager" />
+      <img src="workshop-photos/workshop-09.jpg" alt="" loading="eager" />
+      <img src="workshop-photos/IMG_6517.JPG" alt="" loading="eager" />
+      <img src="workshop-photos/workshop-11.jpg" alt="" loading="eager" />
+      <img src="workshop-photos/IMG_6524.JPG" alt="" loading="eager" />
+      <img src="workshop-photos/IMG_6527.JPG" alt="" loading="eager" />
+    </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <h1 class="hero__headline">
@@ -65,17 +74,25 @@
         <span class="hero__headline-accent">for everyone.</span>
       </h1>
       <p class="hero__sub">
-        We equip communities with the knowledge, tools, and confidence to respond
-        when it matters most — because preparedness saves lives.
+        We equip communities, schools, and workplaces with the knowledge, tools, and
+        confidence to respond when it matters most — because preparedness saves lives.
       </p>
       <div class="hero__ctas">
-        <a href="#about" class="btn btn--primary">Learn More</a>
+        <a href="#get-involved" class="btn btn--primary">Get Involved</a>
         <a href="https://gofund.me/48956af9e" class="btn btn--ghost">Donate Today</a>
       </div>
     </div>
-    <div class="hero__scroll-hint">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
+  </section>
+
+  <!-- TOP STORIES -->
+  <section class="stories stories--feature" id="stories">
+    <div class="stories-feature__wrap">
+      <div class="stories-feature__header">
+        <h2 class="stories-feature__title">Top Stories</h2>
+      </div>
+      <div class="stories__grid">
+
+      </div>
     </div>
   </section>
 
@@ -90,9 +107,6 @@
               alt="Paramedics assisting a patient"
               class="about__img"
             />
-            <div class="about__card-overlay">
-              <span>Real training. Real impact.</span>
-            </div>
           </div>
         </div>
         <div class="about__copy">
@@ -110,99 +124,58 @@
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats" id="stats">
-    <div class="stats__bg"></div>
-    <div class="container stats__inner">
-      <p class="section__eyebrow section__eyebrow--light">Our Impact</p>
-      <h2 class="section__title section__title--light">Growing every single day.</h2>
-      <div class="stats__grid">
-        <div class="stats__card">
-          <span class="stats__num" data-count="85">0</span>
-          <span class="stats__label">Volunteers</span>
+  <!-- GET INVOLVED / TAKE ACTION -->
+  <section class="action" id="get-involved">
+    <div class="container action__rows">
+
+      <article class="action-row">
+        <div class="action-row__media">
+          <img src="workshop-photos/IMG_6528.JPG" alt="JICE leading a community workshop" loading="lazy" />
         </div>
-        <div class="stats__card">
-          <span class="stats__num" data-count="11">0</span>
-          <span class="stats__label">States</span>
+        <div class="action-row__copy">
+          <span class="action-row__tag">For organizations</span>
+          <h3 class="action-row__title">Host a Workshop</h3>
+          <p class="action-row__text">
+            Bring a free, paramedic-led preparedness workshop to your school, business,
+            or community group. We build every session around your space, your goals,
+            and your audience — from CPR awareness to family safety planning.
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFEp5Cg_H8keWD5UP_illiIMVSsFsnl0bw9uT2p5ItDdpgFg/viewform?usp=dialog" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Host a Workshop →</a>
         </div>
-        <div class="stats__card">
-          <span class="stats__num" data-count="1100">0</span>
-          <span class="stats__label">Hours Served</span>
+      </article>
+
+      <article class="action-row action-row--reverse">
+        <div class="action-row__media">
+          <img src="workshop-photos/workshop-03.jpg" alt="Participants practicing hands-on emergency skills" loading="lazy" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED STORIES -->
-  <section class="stories section" id="stories">
-    <div class="container">
-      <p class="section__eyebrow">Featured Stories</p>
-      <h2 class="section__title">Knowledge that saves lives.</h2>
-      <div class="stories__grid">
-
-      </div>
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="stories.html" class="btn btn--primary">View All Stories →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIAL -->
-  <section class="testimonial section">
-    <div class="container">
-      <div class="testimonial__card">
-        <div class="testimonial__quote-icon">"</div>
-        <div class="testimonial__slides">
-
-          <div class="testimonial__slide active">
-            <blockquote class="testimonial__quote">
-              Before JICE, I never thought about what to do in a real emergency.
-              Their guides are clear, practical, and made for people my age.
-            </blockquote>
-            <div class="testimonial__author">
-              <div class="testimonial__avatar">DT</div>
-              <div>
-                <p class="testimonial__name">David Thompson</p>
-                <p class="testimonial__role">Community Member</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial__slide">
-            <blockquote class="testimonial__quote">
-              JICE came to our school and completely changed how our students think
-              about safety. Every school should have this program.
-            </blockquote>
-            <div class="testimonial__author">
-              <div class="testimonial__avatar">ML</div>
-              <div>
-                <p class="testimonial__name">Maria Lopez</p>
-                <p class="testimonial__role">High School Teacher</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial__slide">
-            <blockquote class="testimonial__quote">
-              The volunteers are passionate and knowledgeable. I walked away
-              actually feeling confident I could help in an emergency.
-            </blockquote>
-            <div class="testimonial__author">
-              <div class="testimonial__avatar">JK</div>
-              <div>
-                <p class="testimonial__name">James Kim</p>
-                <p class="testimonial__role">Workshop Participant</p>
-              </div>
-            </div>
-          </div>
-
+        <div class="action-row__copy">
+          <span class="action-row__tag">For teams &amp; individuals</span>
+          <h3 class="action-row__title">Get Trained</h3>
+          <p class="action-row__text">
+            Request CPR certification, AED support, risk assessments, and other
+            life-saving training led by experienced paramedics and first responders —
+            on-site and tailored to the people you care about.
+          </p>
+          <a href="https://forms.gle/jG51sHKy7A5FZUFfA" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Request Training →</a>
         </div>
-        <div class="testimonial__dots">
-          <button class="testimonial__dot active" data-index="0" aria-label="Quote 1"></button>
-          <button class="testimonial__dot" data-index="1" aria-label="Quote 2"></button>
-          <button class="testimonial__dot" data-index="2" aria-label="Quote 3"></button>
+      </article>
+
+      <article class="action-row">
+        <div class="action-row__media">
+          <img src="workshop-photos/IMG_3048.jpeg" alt="Student volunteers leading an emergency preparedness activity" loading="lazy" />
         </div>
-      </div>
+        <div class="action-row__copy">
+          <span class="action-row__tag">For students</span>
+          <h3 class="action-row__title">Student Volunteers</h3>
+          <p class="action-row__text">
+            JICE is youth-led — and student volunteers are at the heart of it. Gain real
+            leadership experience, build life-saving skills, and earn service hours while
+            helping your community prepare. No experience needed, just the will to help.
+          </p>
+          <a href="volunteer.html" class="btn btn--primary">Become a Student Volunteer →</a>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -348,41 +321,6 @@
     </div>
   </section>
 
-  <!-- GET INVOLVED -->
-  <section class="involved section" id="get-involved">
-    <div class="container">
-      <p class="section__eyebrow">Take Action</p>
-      <h2 class="section__title">Join the movement.</h2>
-      <div id="donate"></div>
-      <div class="involved__grid">
-        <div class="involved__card" data-delay="0">
-          <div class="involved__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Volunteer</h3>
-          <p>Give your time and skills to help communities prepare for the unexpected.</p>
-          <a href="volunteer.html" class="btn btn--primary">Sign Up</a>
-        </div>
-        <div class="involved__card" data-delay="100">
-          <div class="involved__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>State Chapters</h3>
-          <p>Join or start a state chapter to bring emergency preparedness programs to your area.</p>
-          <a href="state-chapters.html" class="btn btn--outline">Learn More</a>
-        </div>
-        <div class="involved__card" data-delay="200">
-          <div class="involved__icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          </div>
-          <h3>For Businesses</h3>
-          <p>Request on-site training, AED support, risk assessments, or host a free preparedness workshop for your team or community.</p>
-          <a href="for-businesses.html" class="btn btn--outline">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="footer" id="contact">
     <div class="container footer__inner">
@@ -398,7 +336,6 @@
         <a href="#about">About</a>
         <a href="#stories">Stories</a>
         <a href="#team">Team</a>
-        <a href="#stats">Impact</a>
         <a href="#get-involved">Get Involved</a>
         <a href="#contact">Contact</a>
       </div>

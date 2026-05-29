@@ -195,7 +195,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(
-  '.about__grid, .story-card, .testimonial__card, .contact__grid, .stats__card, .mission-strip__item, .team-card'
+  '.about__grid, .story-card, .testimonial__card, .contact__grid, .stats__card, .mission-strip__item, .team-card, .action-row, .gallery__img'
 ).forEach(el => {
   el.classList.add('reveal');
   revealObserver.observe(el);
@@ -403,7 +403,7 @@ function renderStories() {
   if (homepageGrid) {
     const homepageStories = STORIES.slice(0, 3);
     homepageGrid.innerHTML = homepageStories
-      .map((story, index) => buildStoryCard(story, index === 0))
+      .map(story => buildStoryCard(story))
       .join('');
     applyStoryReveal(homepageGrid);
   }
