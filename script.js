@@ -391,7 +391,6 @@ function buildStoryCard(story, options = {}) {
       <a href="${articleUrl}" class="story-card${featuredClass}">
         <div class="story-card__img-wrap">
           <img src="${escapeHtml(story.image)}" alt="${escapeHtml(story.alt)}" class="story-card__img" loading="lazy" />
-          <span class="story-card__tag">${escapeHtml(story.tag)}</span>
         </div>
         <div class="story-card__body">
           <p class="story-card__meta">${escapeHtml(story.author)} · ${escapeHtml(story.date)} · ${escapeHtml(story.readTime)}</p>
@@ -406,7 +405,6 @@ function buildStoryCard(story, options = {}) {
     <a href="${articleUrl}" class="story-card${featuredClass}">
       <div class="story-card__img-wrap">
         <img src="${escapeHtml(story.image)}" alt="${escapeHtml(story.alt)}" class="story-card__img" loading="lazy" />
-        <span class="story-card__tag">${escapeHtml(story.tag)}</span>
       </div>
       <div class="story-card__body">
         <p class="story-card__meta">${escapeHtml(story.author)} · ${escapeHtml(story.date)} · ${escapeHtml(story.readTime)}</p>
@@ -444,6 +442,98 @@ function applyStoryReveal(container) {
   }
 }
 
+/* Row-count pattern for the All Stories varied grid.
+   Each number is how many cards go in that row (cycling if there are more stories). */
+const ALL_STORIES_ROW_PATTERN = [3, 2, 1, 3, 1, 2, 3, 2, 1, 3];
+
+function renderAllStoriesRows(container, stories) {
+  let idx = 0;
+  let html = '';
+  let patternIdx = 0;
+
+  while (idx < stories.length) {
+    const count = Math.min(
+      ALL_STORIES_ROW_PATTERN[patternIdx % ALL_STORIES_ROW_PATTERN.length],
+      stories.length - idx
+    );
+    const rowStories = stories.slice(idx, idx + count);
+    const cards = rowStories.map(s => buildStoryCard(s)).join('');
+    html += `<div class="stories-row stories-row--${count}">${cards}</div>`;
+    idx += count;
+    patternIdx++;
+  }
+
+  container.innerHTML = html;
+
+  container.querySelectorAll('.story-card').forEach((card, i) => {
+    card.classList.add('reveal');
+    revealObserver.observe(card);
+  });
+}
+
+function initCarousel() {
+  const carousel = document.getElementById('featured-stories');
+  if (!carousel) return;
+
+  const slides = STORIES.slice(0, 5);
+  const slidesEl = carousel.querySelector('.stories-carousel__slides');
+  const titleEl  = document.getElementById('carouselTitle');
+  const excerptEl = document.getElementById('carouselExcerpt');
+  const captionEl = document.getElementById('carouselCaption');
+  const dotsEl   = document.getElementById('carouselDots');
+  const prevBtn  = carousel.querySelector('.stories-carousel__arrow--prev');
+  const nextBtn  = carousel.querySelector('.stories-carousel__arrow--next');
+
+  let current = 0;
+  let timer = null;
+
+  // Build slide divs
+  slides.forEach((story, i) => {
+    const div = document.createElement('div');
+    div.className = 'stories-carousel__slide' + (i === 0 ? ' is-active' : '');
+    div.style.backgroundImage = `url('${story.image}')`;
+    slidesEl.appendChild(div);
+  });
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'stories-carousel__dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', `Go to story ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(dot);
+  });
+
+  function updateCaption(story) {
+    titleEl.textContent = story.title;
+    excerptEl.textContent = story.excerpt || '';
+    captionEl.href = `articles/${story.slug}`;
+  }
+
+  function goTo(n) {
+    const slideEls = slidesEl.querySelectorAll('.stories-carousel__slide');
+    const dotEls   = dotsEl.querySelectorAll('.stories-carousel__dot');
+
+    slideEls[current].classList.remove('is-active');
+    dotEls[current].classList.remove('is-active');
+
+    current = (n + slides.length) % slides.length;
+
+    slideEls[current].classList.add('is-active');
+    dotEls[current].classList.add('is-active');
+    updateCaption(slides[current]);
+
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5500);
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  updateCaption(slides[0]);
+  timer = setInterval(() => goTo(current + 1), 5500);
+}
+
 function renderStories() {
   const homepageGrid = document.querySelector('#stories .stories__grid');
   if (homepageGrid) {
@@ -454,21 +544,11 @@ function renderStories() {
     applyStoryReveal(homepageGrid);
   }
 
-  const featuredGrid = document.querySelector('#featured-stories .stories__grid');
-  if (featuredGrid) {
-    const featuredStories = STORIES.slice(0, 2);
-    featuredGrid.innerHTML = featuredStories
-      .map(story => buildStoryCard(story))
-      .join('');
-    applyStoryReveal(featuredGrid);
-  }
+  initCarousel();
 
-  const allStoriesGrid = document.querySelector('#all-stories .stories__grid');
-  if (allStoriesGrid) {
-    allStoriesGrid.innerHTML = STORIES
-      .map(story => buildStoryCard(story))
-      .join('');
-    applyStoryReveal(allStoriesGrid);
+  const allStoriesContainer = document.getElementById('allStoriesRows');
+  if (allStoriesContainer) {
+    renderAllStoriesRows(allStoriesContainer, STORIES);
   }
 }
 
