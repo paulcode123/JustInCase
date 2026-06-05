@@ -259,7 +259,85 @@ document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(
 
 /* ---------- STORIES ---------- */
 // Add new stories here to automatically populate the homepage and stories page.
+// Order: newest first so the carousel and homepage always surface the latest content.
 const STORIES = [
+  {
+    slug: 'handling-emergencies-alone.html',
+    title: 'Handling Emergencies Alone',
+    tag: 'Article',
+    author: 'Yixuan Song, Jessica Chen',
+    date: 'May 23, 2026',
+    readTime: '4 minutes',
+    image: 'storycovers/_Handling%20Emergencies%20Alone_.jpg',
+    alt: 'Person handling an emergency alone',
+    excerpt: 'Imagine facing an emergency with no one around to help. Emergencies can happen at any time, and knowing how to stay calm, look for help, and protect yourself can make a difference until emergency personnel arrive.'
+  },
+  {
+    slug: 'importance-of-emergency-drills.html',
+    title: 'Importance of Emergency Drills',
+    tag: 'Article',
+    author: 'Suri Liu, Alex Yang',
+    date: 'May 22, 2026',
+    readTime: '3-4 minutes',
+    image: 'storycovers/_Why%20Emergency%20Practice%20Drills%20Matter_.jpg',
+    alt: 'Students practicing an emergency drill',
+    excerpt: 'Emergency drills transform practiced routines into instinctive reactions that can save lives during actual crises.'
+  },
+  {
+    slug: 'why-people-freeze-in-emergencies.html',
+    title: 'Why People Freeze in Emergencies',
+    tag: 'Article',
+    author: 'Brian Chen',
+    date: 'May 20, 2026',
+    readTime: '3 minutes',
+    image: 'storycovers/_Why%20People%20Freeze%20In%20Emergencies_.webp',
+    alt: 'Crowd in a public venue',
+    excerpt: 'A fire alarm rings. Smoke begins to spread. Yet, instead of running, most people pause, look around, and wait. Why is that? Why just stand?'
+  },
+  {
+    slug: 'the-most-common-mistakes-in-emergencies.html',
+    title: 'The Most Common Mistakes People Make in Emergencies',
+    tag: 'Article',
+    author: 'Melina Liu, Justin Tai',
+    date: 'May 17, 2026',
+    readTime: '3-4 minutes',
+    image: 'storycovers/_The%20Most%20Common%20Mistakes%20People%20Make%20in%20Emergencies_.jpg',
+    alt: 'Person responding to a medical emergency',
+    excerpt: 'During an emergency situation, adrenaline is at an all time high, and people often panic and make rash decisions. What can you do to prepare for situations where your loved ones are at risk?'
+  },
+  {
+    slug: 'emergency-preparedness-beyond-the-front-door.html',
+    title: 'Emergency Preparedness Beyond the Front Door',
+    tag: 'Article',
+    author: 'Ethan Tai, Chloe Qian',
+    date: 'May 15, 2026',
+    readTime: '3 minutes',
+    image: 'storycovers/_How%20to%20Handle%20Emergencies%20in%20Unfamiliar%20Places_.webp',
+    alt: 'Navigating an emergency outside the home',
+    excerpt: 'Emergencies rarely pick a time and place, which is why it\'s important to plan ahead for unexpected scenarios. This article explains the steps you can take to effectively prepare for emergencies in unfamiliar places outside the home.'
+  },
+  {
+    slug: 'hidden-dangers-after-the-emergency.html',
+    title: 'Hidden Dangers After the Emergency Is "Over"',
+    tag: 'Article',
+    author: 'Kevy Chen, Lydia Xia',
+    date: 'May 12, 2026',
+    readTime: '2-3 minutes',
+    image: 'storycovers/_Hidden%20Dangers%20After%20the%20Emergency%20is%20_Over_.webp',
+    alt: 'Aftermath of a fire emergency',
+    excerpt: 'It is important to learn the potential risks and dangers that linger after an emergency. This article discusses the hidden dangers after emergencies, such as fires and strokes, have ended.'
+  },
+  {
+    slug: 'choking-first-aid.html',
+    title: 'A Guide to Choking First Aid',
+    tag: 'Article',
+    author: 'Fiona Cheng, Sophie Jin',
+    date: 'April 18, 2026',
+    readTime: '2 minutes',
+    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=1200&q=80',
+    alt: 'First aid training demonstration for choking response',
+    excerpt: 'Over 5,000 people in the United States die from choking every year. Many are aware of the risks, but few actually know what to do in case of emergency. Read this manual so you can be prepared to quickly take action and save somebody from choking - a couple seconds can be the difference between life and death.'
+  },
   {
     slug: 'what-to-do-in-the-first-5-minutes-of-an-emergency.html',
     title: 'What to Do in the First 5 Minutes of an Emergency',
@@ -270,17 +348,6 @@ const STORIES = [
     image: 'storycovers/_What%20to%20Do%20in%20the%20First%205%20Minutes%20of%20an%20Emergency_.png',
     alt: 'Responders providing first aid in an emergency',
     excerpt: 'In any case of a real medical emergency, the very first 5 minutes is crucial. During this short time frame you must be able to know what to do before professional help arrives, but you don\'t know what to do. So, what can you do to help and not make the situation worse?'
-  },
-  {
-    slug: 'introduction-and-guide-to-cpr.html',
-    title: 'Introduction and Guide to CPR',
-    tag: 'Manual',
-    author: 'Anthony Zhu, Brian Chen',
-    date: 'April 12, 2026',
-    readTime: '3 minutes',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80',
-    alt: 'Hands-on CPR practice session',
-    excerpt: 'Over half a million cardiac arrests occur every year in the United States alone, so it is important to know what to do when you witness one. CPR can increase survival rates by up to three times, and it is not just for first responders to do. Bystanders can take action once they learn the essentials of CPR.'
   },
   {
     slug: 'how-to-recognize-and-respond-to-a-medical-emergency.html',
@@ -296,24 +363,13 @@ const STORIES = [
   {
     slug: 'what-is-an-aed-and-how-do-you-use-it.html',
     title: 'What is an AED, and How Do You Use It?',
-    tag: 'Manual',
+    tag: 'Article',
     author: 'Suri Liu, Eason Gao, Oscar Li',
     date: 'April 12, 2026',
-    readTime: '3-4 minute read',
+    readTime: '3-4 minutes',
     image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1200&q=80',
     alt: 'Automated external defibrillator in an emergency setting',
     excerpt: 'During a medical emergency, knowledge of operating devices such as automated external defibrillators, or AEDs, are crucial to ensure survival. The concept is simple; using electricity to shock an irregular or non-beating heart in hopes of restoring cardiac rhythm and function. Take a look at this manual, so that YOU know the safe and proper way to administer aid with an AED.'
-  },
-  {
-    slug: 'choking-first-aid.html',
-    title: 'A Guide to Choking First Aid',
-    tag: 'Manual',
-    author: 'Fiona Cheng, Sophie Jin',
-    date: 'April 18, 2026',
-    readTime: '2 minutes',
-    image: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?w=1200&q=80',
-    alt: 'First aid training demonstration for choking response',
-    excerpt: 'Over 5,000 people in the United States die from choking every year. Many are aware of the risks, but few actually know what to do in case of emergency. Read this manual so you can be prepared to quickly take action and save somebody from choking - a couple seconds can be the difference between life and death.'
   },
   {
     slug: 'the-most-common-emergencies-at-home.html',
@@ -321,7 +377,7 @@ const STORIES = [
     tag: 'Article',
     author: 'Lydia Xia, Ethan Tai',
     date: 'April 12, 2026',
-    readTime: '3 mins',
+    readTime: '3 minutes',
     image: 'storycovers/_The%20Most%20Common%20Emergencies%20at%20Home_.jpg',
     alt: 'Family preparing for home medical emergencies',
     excerpt: 'Household emergencies happen far too often, and many times, the people affected by them were not properly prepared. This can lead to emergencies like heart attacks and strokes, which are addressed in this article along with the medical procedures to prevent and save someone from these emergencies.'
@@ -332,18 +388,29 @@ const STORIES = [
     tag: 'Article',
     author: 'Alex Yang, Kevin Lin',
     date: 'April 12, 2026',
-    readTime: '3-4 mins',
+    readTime: '3-4 minutes',
     image: 'storycovers/_The%20Problem%20With%20Emergency%20Services_.webp',
     alt: 'Ambulance in traffic during emergency response',
     excerpt: 'Response times are rising. Understand why delays happen and what households can do while waiting for professional care.'
   },
   {
+    slug: 'introduction-and-guide-to-cpr.html',
+    title: 'Introduction and Guide to CPR',
+    tag: 'Article',
+    author: 'Anthony Zhu, Brian Chen',
+    date: 'April 12, 2026',
+    readTime: '3 minutes',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80',
+    alt: 'Hands-on CPR practice session',
+    excerpt: 'Over half a million cardiac arrests occur every year in the United States alone, so it is important to know what to do when you witness one. CPR can increase survival rates by up to three times, and it is not just for first responders to do. Bystanders can take action once they learn the essentials of CPR.'
+  },
+  {
     slug: 'mastering-emergency-responses-training-and-resources.html',
     title: 'Mastering Emergency Responses: Training and Resources',
-    tag: 'Preparedness',
+    tag: 'Article',
     author: 'Lawrence Yan',
     date: 'Aug 20, 2025',
-    readTime: '5 min read',
+    readTime: '5 minutes',
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&q=80',
     alt: 'Emergency response workshop with youth participants',
     excerpt: 'Build confidence with practical training paths, trusted certifications, and community resources.'
@@ -351,10 +418,10 @@ const STORIES = [
   {
     slug: 'essential-emergency-education-for-future-generations.html',
     title: 'Essential Emergency Education for Future Generations',
-    tag: 'Education',
+    tag: 'Article',
     author: 'Lawrence Yan',
     date: 'Aug 20, 2025',
-    readTime: '4 min read',
+    readTime: '4 minutes',
     image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=1200&q=80',
     alt: 'Students learning emergency response skills',
     excerpt: 'Emergency education equips the next generation to act quickly, think clearly, and protect their communities.'
@@ -362,10 +429,10 @@ const STORIES = [
   {
     slug: 'just-in-case-enhance-your-emergency-preparedness-skills.html',
     title: 'JICE: Enhance Your Emergency Preparedness Skills',
-    tag: 'Community',
+    tag: 'Article',
     author: 'Lawrence Yan',
     date: 'Aug 20, 2025',
-    readTime: '4 min read',
+    readTime: '4 minutes',
     image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=1200&q=80',
     alt: 'Community members participating in preparedness training',
     excerpt: 'Preparedness starts locally. Learn how JICE helps communities build life-saving readiness skills together.'

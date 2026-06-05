@@ -109,11 +109,6 @@
       h2LineObs.observe(h2);
     });
 
-    /* Pull-quote treatment on first <p> after each <h2> */
-    prose.querySelectorAll('h2 + p').forEach((p) =>
-      p.classList.add('prose-lead')
-    );
-
     /* Callout-card treatment on <ul>/<ol> directly after <h3> */
     prose
       .querySelectorAll('h3 + ul, h3 + ol')
