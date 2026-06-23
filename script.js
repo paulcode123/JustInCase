@@ -1023,6 +1023,25 @@ document.addEventListener('keydown', e => {
 // renderEvents() - Removed: Events section now displays coming soon message
 // renderEvents();
 
+/* ---------- TEAM PAGE: SCROLL-TO-COLOR ---------- */
+(function initTeamCards() {
+  const cards = document.querySelectorAll('.tp-card');
+  if (!cards.length) return;
+
+  const thresholds = Array.from({ length: 21 }, (_, i) => i / 20);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const img = entry.target.querySelector('.tp-card__img');
+      if (!img) return;
+      const gray = Math.round((1 - entry.intersectionRatio) * 100);
+      img.style.filter = `grayscale(${gray}%)`;
+    });
+  }, { threshold: thresholds });
+
+  cards.forEach(card => observer.observe(card));
+})();
+
 /* ---------- SMOOTH SCROLL FOR NAV LINKS ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
