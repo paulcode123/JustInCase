@@ -8,9 +8,7 @@
     "build": "echo 'No build step required'",
     "start": "vercel dev"
   },
-  "dependencies": {
-    "sharp": "^0.34.5"
-  },
+  "dependencies": {},
   "keywords": [
     "emergency",
     "preparedness",
