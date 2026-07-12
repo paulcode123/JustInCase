@@ -22,17 +22,18 @@
         <img src="logo.png" alt="JICE logo" class="nav__logo-img" />
       </a>
       <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
         <li class="dropdown">
           <a href="#about" class="dropdown-toggle">About</a>
           <ul class="dropdown-menu">
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="state-chapters.html">State Chapters</a></li>
+            <li><a href="state-chapters.html">Our Chapters</a></li>
           </ul>
         </li>
-        <li><a href="volunteer.html">Get Involved</a></li>
-        <li><a href="for-businesses.html">For Businesses</a></li>
-        <li><a href="stories.html">Stories</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="for-businesses.html">Programs</a></li>
+        <li><a href="stories.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <a href="https://gofund.me/48956af9e" class="btn btn--nav">Donate</a>
       <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
@@ -44,28 +45,21 @@
         <a href="#about" class="dropdown-toggle-mobile">About</a>
         <div class="dropdown-menu-mobile">
           <a href="team.html">Our Team</a>
-          <a href="state-chapters.html">State Chapters</a>
+          <a href="state-chapters.html">Our Chapters</a>
         </div>
       </div>
-      <a href="volunteer.html">Get Involved</a>
-      <a href="for-businesses.html">For Businesses</a>
-      <a href="stories.html">Stories</a>
-      <a href="#contact">Contact</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="for-businesses.html">Programs</a>
+      <a href="stories.html">Articles</a>
+      <a href="contact.html">Contact</a>
       <a href="https://gofund.me/48956af9e" class="btn btn--nav">Donate</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero__collage" aria-hidden="true">
-      <img src="workshop-photos/IMG_6501.JPG" alt="" loading="eager" />
-      <img src="workshop-photos/workshop-04.jpg" alt="" loading="eager" />
-      <img src="workshop-photos/IMG_6510.JPG" alt="" loading="eager" />
-      <img src="workshop-photos/workshop-09.jpg" alt="" loading="eager" />
-      <img src="workshop-photos/IMG_6517.JPG" alt="" loading="eager" />
-      <img src="workshop-photos/workshop-11.jpg" alt="" loading="eager" />
-      <img src="workshop-photos/IMG_6524.JPG" alt="" loading="eager" />
-      <img src="workshop-photos/IMG_6527.JPG" alt="" loading="eager" />
+    <div class="hero__bg" aria-hidden="true">
+      <img src="collage.png" alt="" loading="eager" />
     </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
@@ -73,12 +67,9 @@
         Emergency readiness<br />
         <span class="hero__headline-accent">for everyone.</span>
       </h1>
-      <p class="hero__sub">
-        We equip communities, schools, and workplaces with the knowledge, tools, and
-        confidence to respond when it matters most — because preparedness saves lives.
-      </p>
+      <p class="hero__sub">A student-led national 501(c)(3) nonprofit dedicated to prepare all communities for any emergency.</p>
       <div class="hero__ctas">
-        <a href="#get-involved" class="btn btn--primary">Get Involved</a>
+        <a href="#get-involved" class="btn btn--primary">Volunteer</a>
         <a href="https://gofund.me/48956af9e" class="btn btn--ghost">Donate Today</a>
       </div>
     </div>
@@ -99,29 +90,74 @@
     </div>
   </section>
 
+  <!-- THE PROBLEM -->
+  <section class="problem" id="the-problem">
+
+    <!-- Aurora orbs (background layer) -->
+    <div class="problem__orb problem__orb--1" aria-hidden="true"></div>
+    <div class="problem__orb problem__orb--2" aria-hidden="true"></div>
+    <div class="problem__orb problem__orb--3" aria-hidden="true"></div>
+
+    <!-- Full-bleed split: images left, stats right -->
+    <div class="problem__split">
+
+      <!-- Left: 3 stacked images bleeding to viewport edge -->
+      <div class="problem__images">
+        <div class="problem__img-item">
+          <img src="workshop-photos/workshop-01.jpg" alt="" loading="eager" />
+        </div>
+        <div class="problem__img-item">
+          <img src="workshop-photos/workshop-12.jpg" alt="" loading="eager" />
+        </div>
+      </div>
+
+      <!-- Right: blurb + alternating stats -->
+      <div class="problem__copy">
+        <p class="problem__blurb">Every year, thousands of families and businesses are devastated due to a lack of emergency preparedness.</p>
+
+        <div class="problem__stat-row problem__stat-row--left">
+          <span class="problem__big-num">350,000</span>
+          <p class="problem__stat-desc">Americans experience cardiac arrest outside a hospital every year.</p>
+        </div>
+
+        <div class="problem__stat-row problem__stat-row--right">
+          <span class="problem__big-num">40%</span>
+          <p class="problem__stat-desc">receive help from a bystander — CPR can double their survival odds.</p>
+        </div>
+
+        <div class="problem__stat-row problem__stat-row--left">
+          <span class="problem__big-num">48%</span>
+          <p class="problem__stat-desc">of Americans have not prepared emergency supplies.</p>
+        </div>
+
+        <div class="problem__stat-row problem__stat-row--right">
+          <span class="problem__big-num">16%</span>
+          <p class="problem__stat-desc">have practiced an emergency drill.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ABOUT -->
-  <section class="about section" id="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="about__grid">
+        <div class="about__copy">
+          <h2 class="section__title about__mission-title">Our Mission Statement</h2>
+          <p class="about__body">
+            Just In Case of Emergency's mission is to make emergency preparedness accessible to every community. We do this through online awareness, official training, and first-aid resources.
+          </p>
+          <a href="#get-involved" class="about__link">Get Involved <span aria-hidden="true" class="about__arrow">→</span></a>
+        </div>
         <div class="about__visual">
           <div class="about__card about__card--main">
             <img
               src="workshop.JPG"
-              alt="Paramedics assisting a patient"
+              alt="JICE workshop in action"
               class="about__img"
             />
           </div>
-        </div>
-        <div class="about__copy">
-          <p class="section__eyebrow">Who We Are</p>
-          <h2 class="section__title">Prepared communities<br />are resilient communities.</h2>
-          <p class="about__body">
-            Just In Case of Emergency is a 501(c)(3) nonprofit founded alongside real paramedics with one mission: making emergency preparedness accessible to everyone.
-          </p>
-          <p class="about__body">
-            Emergencies don't discriminate. Neither does preparedness.
-          </p>
-          <a href="#get-involved" class="btn btn--primary">Get Involved</a>
         </div>
       </div>
     </div>
@@ -195,10 +231,10 @@
       <div class="footer__links">
         <h4>Navigate</h4>
         <a href="#about">About</a>
-        <a href="#stories">Stories</a>
+        <a href="#stories">Articles</a>
         <a href="team.html">Team</a>
-        <a href="#get-involved">Get Involved</a>
-        <a href="#contact">Contact</a>
+        <a href="#get-involved">Volunteer</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer__links">
         <h4>Connect</h4>

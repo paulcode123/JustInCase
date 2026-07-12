@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Just In Case of Emergency</title>
+  <link rel="icon" type="image/png" href="favicon.png?v=3">
+  <link rel="shortcut icon" type="image/png" href="favicon.png?v=3">
+  <link rel="apple-touch-icon" href="favicon.png?v=3">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ---- About Page Specific ---- */
+    .about-story {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .about-story__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-story__copy .section__eyebrow { margin-bottom: 12px; }
+    .about-story__copy h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .about-story__copy p {
+      color: var(--gray-700);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .about-story__img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 480px;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-story__img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ---- Impact Numbers ---- */
+    .about-impact {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+      background: linear-gradient(
+        135deg,
+        #060d1f 0%,
+        #0c1230 28%,
+        #12082a 52%,
+        #091520 76%,
+        #060d1f 100%
+      );
+      background-size: 300% 300%;
+      animation: cosmosShift 22s ease infinite;
+    }
+    .about-impact::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+    .about-impact > .container { position: relative; z-index: 1; }
+    .about-impact__heading {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .about-impact__heading h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .about-impact__heading p {
+      color: rgba(255,255,255,.65);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .about-impact__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .about-impact__card {
+      text-align: center;
+      padding: 40px 24px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(8px);
+      transition: border-color .3s ease, background .3s ease;
+    }
+    .about-impact__card:hover {
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+    }
+    .about-impact__num {
+      font-family: var(--font-head);
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .about-impact__label {
+      font-size: .95rem;
+      color: rgba(255,255,255,.7);
+      line-height: 1.5;
+    }
+
+    /* ---- Approach / Pillars ---- */
+    .about-approach {
+      padding: 100px 0;
+      background: var(--off-white);
+    }
+    .about-approach__heading {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .about-approach__heading h2 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .about-approach__heading p {
+      color: var(--gray-700);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .about-approach__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .about-pillar {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+      transition: box-shadow .3s ease, transform .3s ease;
+    }
+    .about-pillar:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .about-pillar__icon {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .about-pillar__title {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .about-pillar__text {
+      color: var(--gray-700);
+      font-size: .975rem;
+      line-height: 1.75;
+    }
+
+    /* ---- Team CTA ---- */
+    .about-team-cta {
+      padding: 80px 0;
+      background: var(--white);
+      text-align: center;
+    }
+    .about-team-cta h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .about-team-cta p {
+      color: var(--gray-700);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .about-team-cta__actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .about-impact__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .about-story { padding: 72px 0; }
+      .about-story__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .about-story__img-wrap { height: 280px; }
+      .about-impact { padding: 72px 0; }
+      .about-impact__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .about-approach { padding: 72px 0; }
+      .about-approach__grid { grid-template-columns: 1fr; }
+      .about-team-cta { padding: 60px 0; }
+    }
+    @media (max-width: 480px) {
+      .about-impact__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="logo.png" alt="JICE logo" class="nav__logo-img" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="index.html#about" class="dropdown-toggle">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="state-chapters.html">Our Chapters</a></li>
+          </ul>
+        </li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="for-businesses.html">Programs</a></li>
+        <li><a href="stories.html">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="https://gofund.me/48956af9e" class="btn btn--nav">Donate</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <div class="dropdown-mobile">
+        <a href="index.html#about" class="dropdown-toggle-mobile">About</a>
+        <div class="dropdown-menu-mobile">
+          <a href="team.html">Our Team</a>
+          <a href="state-chapters.html">Our Chapters</a>
+        </div>
+      </div>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="for-businesses.html">Programs</a>
+      <a href="stories.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://gofund.me/48956af9e" class="btn btn--nav">Donate</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section
+    class="hero hero--page"
+    aria-labelledby="about-heading"
+    style="background-image: url('workshop-photos/workshop-01.jpg');"
+  >
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="hero__breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="hero__breadcrumb-current">About</span>
+      </nav>
+      <h1 id="about-heading" class="hero__headline hero__headline--page">Our Story</h1>
+      <p class="hero__sub hero__sub--page">
+        A student-led nonprofit built alongside professional paramedics — because emergency preparedness should be accessible to everyone, everywhere.
+      </p>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="about-story">
+    <div class="container">
+      <div class="about-story__grid">
+        <div class="about-story__copy">
+          <p class="section__eyebrow">How We Started</p>
+          <h2>Born out of urgency.<br />Built by students.</h2>
+          <p>
+            Just In Case of Emergency was founded by a group of high school students who recognized a critical gap: most people don't know what to do in an emergency. Working alongside professional paramedics and first responders, we built a nonprofit dedicated to closing that gap — one community at a time.
+          </p>
+          <p>
+            We are a registered 501(c)(3) nonprofit organization. Every program we run, every article we publish, and every workshop we host is driven by one belief: preparedness saves lives, and everyone deserves access to it.
+          </p>
+          <p>
+            Today, JICE operates chapters across the country, hosts in-person and virtual training events, and publishes free emergency education resources for students, families, and businesses alike.
+          </p>
+        </div>
+        <div class="about-story__img-wrap">
+          <img src="workshop-photos/workshop-12.jpg" alt="JICE workshop in action" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT NUMBERS -->
+  <section class="about-impact">
+    <div class="container">
+      <div class="about-impact__heading">
+        <h2>Our Impact</h2>
+        <p>From workshops to online resources, JICE is reaching communities across the country.</p>
+      </div>
+      <div class="about-impact__grid">
+        <div class="about-impact__card reveal">
+          <span class="about-impact__num">50+</span>
+          <p class="about-impact__label">Workshops and training events conducted</p>
+        </div>
+        <div class="about-impact__card reveal">
+          <span class="about-impact__num">10+</span>
+          <p class="about-impact__label">Active state chapters nationwide</p>
+        </div>
+        <div class="about-impact__card reveal">
+          <span class="about-impact__num">500+</span>
+          <p class="about-impact__label">Student volunteers trained and engaged</p>
+        </div>
+        <div class="about-impact__card reveal">
+          <span class="about-impact__num">100%</span>
+          <p class="about-impact__label">Free resources — no cost to the community</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="about-approach">
+    <div class="container">
+      <div class="about-approach__heading">
+        <p class="section__eyebrow">How We Work</p>
+        <h2>Three pillars of preparedness</h2>
+        <p>Everything we do falls under one of three core programs, each designed to make preparedness accessible at every level.</p>
+      </div>
+      <div class="about-approach__grid">
+        <div class="about-pillar reveal">
+          <span class="about-pillar__icon">📡</span>
+          <h3 class="about-pillar__title">Online Awareness</h3>
+          <p class="about-pillar__text">
+            We publish free, expert-reviewed articles and guides covering everything from CPR basics to disaster planning — making life-saving knowledge available to anyone with an internet connection.
+          </p>
+        </div>
+        <div class="about-pillar reveal">
+          <span class="about-pillar__icon">🎓</span>
+          <h3 class="about-pillar__title">Official Training</h3>
+          <p class="about-pillar__text">
+            In partnership with certified paramedics and first responders, we deliver hands-on CPR, AED, and first-aid training workshops for schools, businesses, and community organizations.
+          </p>
+        </div>
+        <div class="about-pillar reveal">
+          <span class="about-pillar__icon">🩺</span>
+          <h3 class="about-pillar__title">First-Aid Resources</h3>
+          <p class="about-pillar__text">
+            From printable emergency checklists to supply guides, we create practical tools that help individuals and families build emergency kits and response plans tailored to their needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE TEAM CTA -->
+  <section class="about-team-cta">
+    <div class="container">
+      <p class="section__eyebrow" style="text-align:center;">The People Behind JICE</p>
+      <h2>Meet our team</h2>
+      <p>JICE is run entirely by students from across the country, supported by professional advisors and paramedic partners.</p>
+      <div class="about-team-cta__actions">
+        <a href="team.html" class="btn btn--primary">Meet the Team →</a>
+        <a href="contact.html" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">
+          <span class="nav__logo-text">Just In Case of Emergency</span>
+        </a>
+        <p class="footer__tagline">Emergency readiness for everyone.</p>
+        <p class="footer__legal">Just In Case of Emergency Inc. is a registered 501(c)(3) nonprofit organization.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Navigate</h4>
+        <a href="about.html">About</a>
+        <a href="stories.html">Articles</a>
+        <a href="team.html">Team</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer__links">
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/justincaseofhq/" class="footer__connect-btn" aria-label="Visit us on Instagram">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.95 1.35a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"></path>
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <a href="mailto:justincaseofemergencyedu@gmail.com" class="footer__connect-btn" aria-label="Send us an email">
+          <svg class="footer__connect-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.3l9 5.7 9-5.7V7H3zm18 10V9.4l-8.46 5.35a1 1 0 0 1-1.08 0L3 9.4V17h18z"></path>
+          </svg>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Just In Case of Emergency Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

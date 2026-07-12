@@ -35,16 +35,6 @@ if (hamburger && mobileMenu) {
   });
 }
 
-/* ---------- MOBILE DROPDOWN ---------- */
-const dropdownToggleMobile = document.querySelector('.dropdown-toggle-mobile');
-const dropdownMobile = document.querySelector('.dropdown-mobile');
-if (dropdownToggleMobile && dropdownMobile) {
-  dropdownToggleMobile.addEventListener('click', (e) => {
-    e.preventDefault();
-    dropdownMobile.classList.toggle('open');
-  });
-}
-
 /* ---------- FOR BUSINESSES TABS ---------- */
 (function initBusinessesTabs() {
   const tabs = document.querySelectorAll('.businesses__tab');
@@ -209,6 +199,35 @@ document.querySelectorAll(
   el.classList.add('reveal');
   revealObserver.observe(el);
 });
+
+/* ---------- PROBLEM SECTION REVEALS + SCROLL PARALLAX ---------- */
+(function initProblemSection() {
+  // Fade-up reveal for blurb and stat rows only (images appear immediately, no bounce)
+  document.querySelectorAll('.problem__blurb, .problem__stat-row').forEach(el => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+
+  // Proximity color: numbers start black, fade to red only when very close to center
+  const nearObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('is-near', entry.isIntersecting);
+    });
+  }, { rootMargin: '-38% 0px -38% 0px' });
+
+  document.querySelectorAll('.problem__big-num').forEach(el => nearObserver.observe(el));
+
+  // Scroll-driven orb parallax via --scroll-progress CSS custom property
+  const section = document.getElementById('the-problem');
+  if (!section) return;
+  window.addEventListener('scroll', () => {
+    const rect = section.getBoundingClientRect();
+    const total = window.innerHeight + rect.height;
+    const progress = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / total));
+    section.style.setProperty('--scroll-progress', progress);
+  }, { passive: true });
+})();
+// Note: [data-count] elements are picked up by the counterObserver setup below
 
 /* ---------- GET INVOLVED CARDS STAGGER ---------- */
 const involvedObserver = new IntersectionObserver((entries) => {
@@ -640,10 +659,11 @@ if (form && success) form.addEventListener('submit', async (e) => {
       message: formData.get('message')
     };
 
-    const response = await fetch('/api/submit-message', {
+    const response = await fetch('https://formspree.io/f/mwvdgjvw', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Accept': 'application/json',
       },
       body: JSON.stringify(data)
     });
@@ -1087,4 +1107,195 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 
   startTimer();
+})();
+
+/* ---------- STATE CHAPTERS MAP ---------- */
+/* Keyed by two-letter state code. Each star in the SVG uses a matching data-state. */
+const CHAPTERS = {
+  NY: {
+    name: 'New York',
+    eyebrow: 'Headquarters',
+    headquarters: {
+      image: 'workshop-photos/group.jpeg',
+      blurb: 'In early 2025, a group of students from New York City founded JICE alongside emergency workers from NYU Langone. Most of our executive operations take place here, and many of our partners are also found here.',
+      linkText: 'Meet Our Executive Team',
+      linkHref: 'team.html',
+    },
+  },
+  NJ: {
+    name: 'New Jersey',
+    members: [
+      {
+        name: 'Anduela Guzi',
+        role: 'Chapter Director',
+        photo: 'state chapters/new jersey/anduelaguzi.png',
+        bio: 'Anduela is one of the new Chapter Directors and is passionate about emergency preparedness. She believes these skills can save lives and is excited to help expand the branch and increase community involvement.',
+      },
+      {
+        name: 'Annelise Ronquillo',
+        role: 'Director',
+        photo: 'state chapters/new jersey/anneliseronquillo.png',
+        bio: 'Annelise is a sophomore at Bergen County Academies. As a Director of Just in Case of Emergency\'s New Jersey chapter, she is dedicated to helping expand access to emergency education in local communities.',
+      },
+    ],
+  },
+  MA: {
+    name: 'Massachusetts',
+    members: [
+      {
+        name: 'Iris Babcock',
+        role: 'Chapter Director & Co-Founder',
+        photo: 'state chapters/massachusetts/irisbabcock.png',
+        bio: 'Iris is a sophomore at Lexington High School. As the Chapter Director and co-founder of the Massachusetts Branch of JICE, she leads the branch\'s overall operations, coordinates events, and ensures the organization works to make emergency preparedness accessible to all in Massachusetts.',
+      },
+      {
+        name: 'Anne Zhang',
+        role: 'Marketing Director',
+        photo: 'state chapters/massachusetts/annezhang.png',
+        bio: 'Anne is a sophomore at Lexington High School. As the Marketing Director for the Massachusetts Branch of JICE, she leads promotional initiatives, manages outreach efforts, and helps strengthen the organization\'s public presence. She works to engage community members, increase awareness of JICE\'s mission, and support events through strategic marketing and communication campaigns.',
+      },
+    ],
+  },
+  MN: {
+    name: 'Minnesota',
+    members: [
+      {
+        name: 'Amelya Qiu',
+        role: 'Chapter Director',
+        photo: 'state chapters/minnesota/amelyaqiu.png',
+        bio: 'Bio coming soon.',
+      },
+    ],
+  },
+  TX: {
+    name: 'Texas',
+    members: [
+      { name: 'Jason Li', role: 'Chapter Director', bio: 'Bio coming soon.' },
+      { name: 'Kevin Song', role: 'Chapter Director', bio: 'Bio coming soon.' },
+    ],
+  },
+  KY: {
+    name: 'Kentucky',
+    members: [
+      { name: 'Jessica Chen', role: 'Chapter Director', bio: 'Bio coming soon.' },
+    ],
+  },
+  PA: {
+    name: 'Pennsylvania',
+    members: [
+      { name: 'Vivian Zheng', role: 'Chapter Director', bio: 'Bio coming soon.' },
+    ],
+  },
+  CT: { name: 'Connecticut', comingSoon: true },
+  FL: { name: 'Florida', comingSoon: true },
+};
+
+const CHAPTER_PLACEHOLDER_SVG = `
+  <svg class="chapter-member__placeholder-icon" viewBox="0 0 64 80" aria-hidden="true">
+    <circle cx="32" cy="22" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/>
+    <path d="M10 74c0-12 10-22 22-22s22 10 22 22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+`;
+
+(function initChapterMap() {
+  const mapEl = document.getElementById('chapterMap');
+  const modal = document.getElementById('chapterModal');
+  if (!mapEl || !modal) return;
+
+  const titleEl = document.getElementById('chapterModalTitle');
+  const eyebrowEl = document.getElementById('chapterModalEyebrow');
+  const membersEl = document.getElementById('chapterModalMembers');
+  const stars = mapEl.querySelectorAll('.chapter-star');
+  let lastFocused = null;
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function renderMemberPhoto(m) {
+    if (m.photo) {
+      return `<div class="chapter-member__photo-wrap">
+        <img class="chapter-member__img" src="${escapeHtml(m.photo)}" alt="${escapeHtml(m.name)}" loading="lazy" />
+      </div>`;
+    }
+    return `<div class="chapter-member__photo-wrap chapter-member__photo-wrap--placeholder">
+      ${CHAPTER_PLACEHOLDER_SVG}
+    </div>`;
+  }
+
+  function renderMembers(members) {
+    membersEl.className = 'chapter-modal__members';
+    membersEl.innerHTML = members.map(m => `
+      <div class="chapter-member">
+        ${renderMemberPhoto(m)}
+        <h4 class="chapter-member__name">${escapeHtml(m.name)}</h4>
+        ${m.role ? `<p class="chapter-member__role">${escapeHtml(m.role)}</p>` : ''}
+        <p class="chapter-member__bio">${escapeHtml(m.bio || 'Bio coming soon.')}</p>
+      </div>
+    `).join('');
+  }
+
+  function renderComingSoon() {
+    membersEl.className = 'chapter-modal__coming-soon-wrap';
+    membersEl.innerHTML = '<p class="chapter-modal__coming-soon">Coming soon.</p>';
+  }
+
+  function renderHeadquarters(hq) {
+    membersEl.className = 'chapter-modal__hq-wrap';
+    membersEl.innerHTML = `
+      <div class="chapter-hq">
+        ${hq.image ? `<div class="chapter-hq__photo"><img src="${escapeHtml(hq.image)}" alt="JICE founding team in New York" loading="lazy" /></div>` : ''}
+        <p class="chapter-hq__blurb">${escapeHtml(hq.blurb || '')}</p>
+        ${hq.linkText ? `<a class="chapter-hq__link" href="${escapeHtml(hq.linkHref || '#')}">${escapeHtml(hq.linkText)} <span class="chapter-hq__arrow" aria-hidden="true">&rarr;</span></a>` : ''}
+      </div>
+    `;
+  }
+
+  function openModal(code) {
+    const chapter = CHAPTERS[code];
+    if (!chapter) return;
+    lastFocused = document.activeElement;
+    titleEl.textContent = chapter.name;
+    if (eyebrowEl) eyebrowEl.textContent = chapter.eyebrow || 'State chapter';
+    if (chapter.comingSoon) {
+      renderComingSoon();
+    } else if (chapter.headquarters) {
+      renderHeadquarters(chapter.headquarters);
+    } else {
+      renderMembers(chapter.members || []);
+    }
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    const closeBtn = modal.querySelector('.chapter-modal__close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.classList.remove('modal-open');
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  stars.forEach(star => {
+    const code = star.getAttribute('data-state');
+    star.addEventListener('click', () => openModal(code));
+    star.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(code);
+      }
+    });
+  });
+
+  modal.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', closeModal);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
 })();
