@@ -40,6 +40,7 @@
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
+      <a href="index.html">Home</a>
       <div class="dropdown-mobile">
         <a href="index.html#about" class="dropdown-toggle-mobile">About</a>
         <div class="dropdown-menu-mobile">
@@ -55,20 +56,35 @@
     </div>
   </nav>
 
+  <!-- HERO -->
+  <section
+    class="hero hero--page hero--chapters"
+    aria-labelledby="chapters-heading"
+    style="background-image: url('collage.png');"
+  >
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html#about">About</a>
+        <span class="hero__breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="hero__breadcrumb-current">Our Chapters</span>
+      </nav>
+      <h1 id="chapters-heading" class="hero__headline hero__headline--page">Our Chapters</h1>
+      <p class="hero__sub hero__sub--page">
+        JICE was founded in New York, but we have worked to expand our reach across the country. Operating in over 11 states, we have officially established 9 state chapters.
+        <span class="hero--chapters__cta">Click on the states below to learn about our leaders.</span>
+      </p>
+    </div>
+  </section>
+
   <!-- STATE CHAPTERS SECTION -->
   <section class="state-chapters section">
 
     <!-- INTERACTIVE MAP -->
     <div class="chapter-map" id="chapterMap">
-      <div class="chapter-map__collage" aria-hidden="true"></div>
       <div class="chapter-map__aurora chapter-map__aurora--1" aria-hidden="true"></div>
       <div class="chapter-map__aurora chapter-map__aurora--2" aria-hidden="true"></div>
       <div class="chapter-map__aurora chapter-map__aurora--3" aria-hidden="true"></div>
-
-      <div class="chapter-map__header">
-        <h1 class="chapter-map__title">Our Chapters</h1>
-        <p class="chapter-map__intro">JICE was founded in New York, but we have worked to expand our reach across the country. Operating in over 11 states, we have officially established 9 state chapters.<span class="chapter-map__intro-cta">Click on the states below to learn about our leaders.</span></p>
-      </div>
 
       <div class="chapter-map__stage">
         <svg class="chapter-map__svg" viewBox="0 0 959 593" role="img" aria-label="Map of the United States showing Just In Case of Emergency state chapters" xmlns="http://www.w3.org/2000/svg">

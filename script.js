@@ -281,6 +281,83 @@ document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(
 // Order: newest first so the carousel and homepage always surface the latest content.
 const STORIES = [
   {
+    slug: 'how-to-handle-an-overdose-emergency.html',
+    title: 'How to Handle an Overdose Emergency',
+    tag: 'Article',
+    author: 'Justin Tai, Melina Liu',
+    date: 'June 28, 2026',
+    readTime: '4-5 minutes',
+    image: 'storycovers/_How%20to%20Handle%20an%20Overdose%20Emergency_.jpg',
+    alt: 'How to handle an overdose emergency',
+    excerpt: 'During an overdose emergency it\'s highly important to know how to handle the situation properly. However, what if you are unsure and you don\'t know what to do? From reading this article, you will be able to understand the definition of an overdose, the symptoms, how to handle it, and how to respond properly–which is crucial in saving a life.'
+  },
+  {
+    slug: 'what-a-heart-attack-really-looks-like.html',
+    title: 'What a Heart Attack Really Looks Like',
+    tag: 'Article',
+    author: 'Jessica Chen, Yixuan Song',
+    date: 'June 21, 2026',
+    readTime: '2 minutes',
+    image: 'storycovers/_What%20a%20Heart%20Attack%20Really%20Looks%20Like_.jpg',
+    alt: 'What a heart attack really looks like',
+    excerpt: 'About 805,000 Americans experience a heart attack each year, making heart attacks one of the leading causes of death in the United States. Read this article to learn the warning signs of a heart attack to respond as quickly and efficiently as possible.'
+  },
+  {
+    slug: 'technologys-role-in-modern-emergency-response.html',
+    title: 'Technology\'s Role in Modern Emergency Response',
+    tag: 'Article',
+    author: 'Anthony Zhu',
+    date: 'June 21, 2026',
+    readTime: '4-5 minutes',
+    image: 'storycovers/_Technology_s%20Role%20in%20Modern%20Emergency%20Response_.jpg',
+    alt: 'Technology\'s role in modern emergency response',
+    excerpt: 'As humanity advances, so does technology. Learn about the different innovations that experts use to ensure our safety in this dangerous world.'
+  },
+  {
+    slug: 'how-emergency-warning-systems-work.html',
+    title: 'How Emergency Warning Systems Work',
+    tag: 'Article',
+    author: 'Fiona Cheng',
+    date: 'June 21, 2026',
+    readTime: '3 minutes',
+    image: 'storycovers/_How%20Emergency%20Warning%20Systems%20Work_.jpg',
+    alt: 'How emergency warning systems work',
+    excerpt: 'You\'re going about your day when suddenly, an alert sounds on your phone. How does your phone get this alert, and what should you do? Staying safe depends on your reaction.'
+  },
+  {
+    slug: 'emergency-preparedness-for-people-with-disabilities.html',
+    title: 'Emergency Preparedness for People with Disabilities',
+    tag: 'Article',
+    author: 'Lydia Xia',
+    date: 'June 21, 2026',
+    readTime: '2 minutes',
+    image: 'storycovers/_Emergency%20Preparedness%20for%20People%20With%20Disabilities_.jpg',
+    alt: 'Emergency preparedness for people with disabilities',
+    excerpt: 'For those with physical, sensory, or cognitive disabilities, handling emergencies can become more complicated and dangerous than they already are. Read this article to learn how to stay prepared during an emergency when navigating a disability.'
+  },
+  {
+    slug: 'stopping-severe-bleeding.html',
+    title: 'Stopping Severe Bleeding',
+    tag: 'Article',
+    author: 'Alex Yang, Suri Liu',
+    date: 'June 18, 2026',
+    readTime: '3-4 minutes',
+    image: 'storycovers/_Stopping%20Severe%20Bleeding_.jpg',
+    alt: 'Stopping severe bleeding during an emergency',
+    excerpt: 'During an emergency, immediate action can save lives. Read this article to learn how to efficiently treat severe bleeding to avoid blood loss.'
+  },
+  {
+    slug: 'how-search-and-rescue-teams-find-missing-people.html',
+    title: 'How Search and Rescue Teams Find Missing People',
+    tag: 'Article',
+    author: 'Chloe Qian, Ethan Tai',
+    date: 'June 18, 2026',
+    readTime: '3 minutes',
+    image: 'storycovers/_How%20Search%20and%20Rescue%20Teams%20Find%20Missing%20People_.jpg',
+    alt: 'How search and rescue teams find missing people',
+    excerpt: 'When search and rescue teams search for missing people, every second counts. This article provides information on the different planning, equipment, and methods used to locate people.'
+  },
+  {
     slug: 'handling-emergencies-alone.html',
     title: 'Handling Emergencies Alone',
     tag: 'Article',

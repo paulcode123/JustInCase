@@ -2516,6 +2516,64 @@ section.about::after {
   border-top: 1px solid rgba(230,57,70,.07);
 }
 
+/* --- Bibliography Box --- */
+.article-bibliography {
+  background: linear-gradient(135deg, var(--off-white), #f5f0f8);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  border: 1px solid rgba(26,39,68,.1);
+  margin-top: 48px;
+}
+.article-bibliography__label {
+  font-family: var(--font-head);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 14px;
+}
+.article-bibliography__list {
+  list-style: none;
+  margin: 0 !important;
+  padding: 0;
+}
+.article-bibliography__list li {
+  padding: 5px 0 5px 22px;
+  position: relative;
+  font-size: .9rem;
+  line-height: 1.6;
+  color: var(--gray-700);
+  margin-bottom: 4px;
+}
+.article-bibliography__list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  width: 7px;
+  height: 9px;
+  border: 1.5px solid var(--navy-mid);
+  border-radius: 1px;
+  opacity: .55;
+}
+.article-bibliography__list li + li {
+  border-top: 1px solid rgba(26,39,68,.06);
+  padding-top: 8px;
+  margin-top: 4px;
+}
+.article-bibliography__list a {
+  color: var(--navy-mid);
+  text-decoration: underline;
+  text-decoration-color: rgba(26,39,68,.25);
+  text-underline-offset: 2px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+.article-bibliography__list a:hover {
+  color: var(--red);
+  text-decoration-color: var(--red);
+}
+
 /* --- Strong Keyword Pop --- */
 .prose strong.strong-pop {
   background: linear-gradient(
@@ -3842,6 +3900,19 @@ section.about::after {
     padding: 92px 0 40px;
   }
 
+  .hero--team {
+    padding: 108px 0 56px;
+  }
+
+  .hero--chapters {
+    padding: 96px 0 28px;
+  }
+
+  .hero--chapters .hero__headline--page,
+  .hero--team .hero__headline--page {
+    font-size: clamp(2rem, 8vw, 3.25rem);
+  }
+
   .nav__links { display: none; }
   .nav > .btn--nav { display: none; }
   .nav__hamburger { display: flex; }
@@ -3943,6 +4014,55 @@ section.about::after {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero--chapters {
+  background-size: cover;
+  background-position: center top;
+  padding: 118px 0 36px;
+}
+
+.hero--chapters .hero__overlay {
+  background:
+    radial-gradient(120% 120% at 20% 0%, rgba(16, 38, 95, 0.38) 0%, transparent 55%),
+    radial-gradient(120% 120% at 85% 100%, rgba(12, 42, 99, 0.32) 0%, transparent 55%),
+    linear-gradient(
+      160deg,
+      rgba(6, 16, 51, 0.92) 0%,
+      rgba(10, 26, 77, 0.88) 55%,
+      rgba(16, 38, 95, 0.84) 100%
+    );
+}
+
+.hero--chapters .hero__content {
+  text-align: center;
+  padding-top: 0.875rem;
+}
+
+.hero--chapters .hero__breadcrumb {
+  display: flex;
+  justify-content: center;
+}
+
+.hero--chapters .hero__headline--page {
+  font-size: 3.25rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--chapters .hero__sub--page {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero--chapters__cta {
+  display: block;
+  margin-top: 0.75rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 10px rgba(130, 165, 255, 0.55);
 }
 
 .tp-section {
@@ -4073,8 +4193,8 @@ section.about::after {
   position: relative;
   width: 100%;
   margin: 0;
-  min-height: 100vh;
-  padding: 130px clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4.5rem);
+  min-height: 0;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4087,51 +4207,8 @@ section.about::after {
   isolation: isolate;
 }
 
-/* Collage strip fading into the navy background at the top */
-.chapter-map__collage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: min(58vh, 520px);
-  z-index: 0;
-  background-image:
-    linear-gradient(to bottom, rgba(8, 20, 55, 0.72) 0%, rgba(6, 14, 44, 0.9) 55%, rgba(5, 13, 43, 1) 100%),
-    url('collage.png');
-  background-size: cover;
-  background-position: center top;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
-  pointer-events: none;
-}
+/* Collage strip — retired; collage now used in .hero--chapters */
 
-.chapter-map__header {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-  margin-bottom: clamp(1rem, 3vw, 2.5rem);
-  opacity: 0;
-  animation: chapterMapFadeIn 1.4s ease forwards;
-}
-
-.chapter-map__title {
-  font-family: var(--font-head);
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  color: #fff;
-  text-shadow: 0 0 24px rgba(70, 120, 235, 0.6), 0 0 60px rgba(40, 90, 210, 0.4);
-}
-
-.chapter-map__intro {
-  max-width: 640px;
-  margin: 1.1rem auto 0;
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
-  line-height: 1.65;
-  color: rgba(214, 224, 255, 0.88);
-}
-
-/* Full-bleed hero: no section padding above the purple stage */
 .state-chapters.section {
   padding: 0;
 }
@@ -4235,8 +4312,6 @@ section.about::after {
   width: 100%;
   max-width: 1150px;
   margin: 0 auto;
-  opacity: 0;
-  animation: chapterMapFadeIn 1.6s ease 0.4s forwards;
 }
 
 .chapter-map__svg {
@@ -4318,12 +4393,6 @@ section.about::after {
 @keyframes starHalo {
   0%, 100% { transform: scale(0.6); opacity: 0.55; }
   50%      { transform: scale(1.25); opacity: 0.15; }
-}
-
-.chapter-map__intro-cta {
-  display: block;
-  margin-top: 0.7rem;
-  text-shadow: 0 0 8px rgba(130, 165, 255, 0.5);
 }
 
 /* Modal */
@@ -4552,26 +4621,30 @@ body.modal-open {
   to   { opacity: 1; }
 }
 
-@keyframes chapterMapFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes chapterPop {
   from { opacity: 0; transform: translateY(16px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+@media (max-width: 768px) {
+  .chapter-map__stage {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+
+  .chapter-map__svg {
+    min-width: 680px;
+    width: 680px;
+    max-width: none;
+  }
+}
+
 @media (max-width: 600px) {
   .chapter-map {
     min-height: auto;
-    padding: 100px 1.25rem 2.5rem;
+    padding: clamp(1.5rem, 4vw, 2rem) 1.25rem 2.5rem;
   }
   .chapter-modal__members {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -4584,11 +4657,5 @@ body.modal-open {
   .us-state,
   .chapter-star__halo {
     animation: none;
-  }
-  .chapter-map__header,
-  .chapter-map__stage {
-    animation: none;
-    opacity: 1;
-    transform: none;
   }
 }
